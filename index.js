@@ -157,6 +157,7 @@ function calculator() {
         } else {
             resultEighth();
         }
+        console.log(score);
     }
     console.log(click);
 }

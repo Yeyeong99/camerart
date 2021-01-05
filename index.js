@@ -24,6 +24,26 @@ function sectionFourth(){
     optionBtn[2].innerHTML = "4.3";
 }
 
+function sectionFourth1(){
+    question.innerHTML = "4 번째 질문";
+    optionBtn[0].innerHTML = "4.1";
+    optionBtn[1].innerHTML = "4.2";
+    optionBtn[2].innerHTML = "4.3";
+}
+
+function sectionFourth2(){
+    question.innerHTML = "4 번째 질문";
+    optionBtn[0].innerHTML = "4.1";
+    optionBtn[1].innerHTML = "4.2";
+    optionBtn[2].innerHTML = "4.3";
+}
+
+function sectionFourth3(){
+    question.innerHTML = "4 번째 질문";
+    optionBtn[0].innerHTML = "4.1";
+    optionBtn[1].innerHTML = "4.2";
+    optionBtn[2].innerHTML = "4.3";
+}
 function sectionFifth(){
     question.innerHTML = "5 번째 질문";
     optionBtn[0].innerHTML = "5.1";
@@ -92,34 +112,46 @@ function resultEighth(){
 }
 //점수 계산
 function calculator() {
-    console.log(score);
+    console.log(click);
     if (click == 1) {
        sectionSecond();
-        click +=1
+        click +=1;
     } else if (click == 2) {
         sectionThird();
-        click +=1
+        click +=1;
     } else if (click == 3) {
         sectionFourth();
-        click +=1
+        click +=1;
     } else if (click == 4) {
+        // optionBtn[0].addEventListener("click",function () {
+        //     sectionFourth1();
+        //     click +=1;
+        // });
+        // optionBtn[1].addEventListener("click",function () {
+        //     sectionFourth2();
+        //     click +=1;
+        // });
+        // optionBtn[2].addEventListener("click",function () {
+        //     sectionFourth3();
+        //     click +=1;
+        // });
         sectionFifth();
-        click +=1
+        click +=1;
     } else if (click == 5) {
         sectionSixth();
-        click +=1
+        click +=1;
     } else if (click == 6) {
         sectionSeventh();
-        click +=1
+        click +=1;
     } else if (click == 7) {
         sectionEighth();
-        click +=1
+        click +=1;
     } else if (click == 8) {
         sectionNinth();
-        click +=1
+        click +=1;
     } else if (click == 9) {
         sectionTenth();
-        click +=1
+        click +=1;
     } else if (click == 10) {
         if(score >= 19) {
             resultFirst();

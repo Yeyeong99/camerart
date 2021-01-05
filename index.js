@@ -3,107 +3,157 @@ const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 let score = 0;
 let click = 1;
-console.log(click)
-
-function secondSection(){
+// 각 화면
+function sectionSecond(){
     question.innerHTML = "2 번째 질문";
     optionBtn[0].innerHTML = "2.1";
     optionBtn[1].innerHTML = "2.2";
     optionBtn[2].innerHTML = "2.3";
 }
-function thirdSection(){
+function sectionThird(){
     question.innerHTML = "3 번째 질문";
     optionBtn[0].innerHTML = "3.1";
     optionBtn[1].innerHTML = "3.2";
     optionBtn[2].innerHTML = "3.3";
 }
 
-function fourthSection(){
+function sectionFourth(){
     question.innerHTML = "4 번째 질문";
     optionBtn[0].innerHTML = "4.1";
     optionBtn[1].innerHTML = "4.2";
     optionBtn[2].innerHTML = "4.3";
 }
 
-function fifthSection(){
+function sectionFifth(){
     question.innerHTML = "5 번째 질문";
     optionBtn[0].innerHTML = "5.1";
     optionBtn[1].innerHTML = "5.2";
     optionBtn[2].innerHTML = "5.3";
 }
 
-function sixthSection(){
+function sectionSixth(){
     question.innerHTML = "6 번째 질문";
     optionBtn[0].innerHTML = "6.1";
     optionBtn[1].innerHTML = "6.2";
     optionBtn[2].innerHTML = "6.3";
 }
 
-function seventhSection(){
+function sectionSeventh(){
     question.innerHTML = "7 번째 질문";
     optionBtn[0].innerHTML = "7.1";
     optionBtn[1].innerHTML = "7.2";
     optionBtn[2].innerHTML = "7.3";
 }
 
-function eighthSection(){
+function sectionEighth(){
     question.innerHTML = "8 번째 질문";
     optionBtn[0].innerHTML = "8.1";
     optionBtn[1].innerHTML = "8.2";
     optionBtn[2].innerHTML = "8.3";
 }
 
-function ninethSection(){
+function sectionNineth(){
     question.innerHTML = "9 번째 질문";
     optionBtn[0].innerHTML = "9.1";
     optionBtn[1].innerHTML = "9.2";
     optionBtn[2].innerHTML = "9.3";
 }
 
-function tenthSection(){
+function sectionTenth(){
     question.innerHTML = "10 번째 질문";
     optionBtn[0].innerHTML = "10.1";
     optionBtn[1].innerHTML = "10.2";
     optionBtn[2].innerHTML = "10.3";
 }
 
-function eleventhSection(){
-    question.innerHTML = "끝";
+function resultFirst(){
+    question.innerHTML = "끝1";
 }
-
+function resultSecond(){
+    question.innerHTML = "끝2";
+}
+function resultThird(){
+    question.innerHTML = "끝3";
+}
+function resultFourth(){
+    question.innerHTML = "끝4";
+}
+function resultFifth(){
+    question.innerHTML = "끝5";
+}
+function resultSixth(){
+    question.innerHTML = "끝6";
+}
+function resultSeventh(){
+    question.innerHTML = "끝7";
+}
+function resultEighth(){
+    question.innerHTML = "끝8";
+}
+//점수 계산
 function calculatorFirst() {
-    score +=1
     console.log(score);
     if (click == 1) {
-        secondSection();
+       sectionSecond();
         click +=1
     } else if (click == 2) {
-        thirdSection();
+        sectionThird();
         click +=1
     } else if (click == 3) {
-        fourthSection();
+        sectionFourth();
         click +=1
     } else if (click == 4) {
-        fifthSection();
+        sectionFifth();
         click +=1
     } else if (click == 5) {
-        sixthSection();
+        sectionSixth();
         click +=1
     } else if (click == 6) {
-        seventhSection();
+        sectionSeventh();
         click +=1
     } else if (click == 7) {
-        eighthSection();
+        sectionEighth();
         click +=1
     } else if (click == 8) {
-        ninethSection();
+        sectionNineth();
         click +=1
     } else if (click == 9) {
-        tenthSection();
+        sectionTenth();
         click +=1
     } else if (click == 10) {
-        eleventhSection();
+        if(score >= 29) {
+            resultFirst();
+        }else if (score >= 25) {
+            resultSecond();
+        }else if (score >= 22) {
+            resultThird();
+        }else if (score >= 18) {
+            resultFourth();
+        }else if (score >= 14) {
+            resultFifth();
+        }else if (score >= 10) {
+            resultSixth();
+        }else if (score >= 7) {
+            resultSeventh();
+        }else if (score >= 3) {
+            resultEighth();
+        }
     }
 }
 
-optionBtn[0].addEventListener("click",calculatorFirst);
+for (let i = 0; i < optionBtn.length; i++) {
+    optionBtn[i].addEventListener("click", function () {
+        if(i==0){
+            score +=3
+        }else if(i==1) {
+            score +=2
+        }else if (i==2) {
+            score +=1
+        }
+        calculatorFirst();
+      })
+    
+}
+// optionBtn[0].addEventListener("click",calculatorFirst);
+console.log(score);
+console.log(click);

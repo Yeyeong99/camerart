@@ -140,19 +140,19 @@ function calculator() {
         sectionTenth();
         click +=1;
     } else if (click == 9) {
-        if(score >= 19) {
+        if(score >= 36) {
             resultFirst();
-        } else if (score >= 17) {
+        } else if (score >= 32) {
             resultSecond();
-        } else if (score >= 14) {
+        } else if (score >= 27) {
             resultThird();
-        } else if (score >= 11) {
+        } else if (score >= 23) {
             resultFourth();
-        } else if (score >= 9) {
+        } else if (score >= 19) {
             resultFifth();
-        } else if (score >= 7) {
+        } else if (score >= 15) {
             resultSixth();
-        } else if (score >= 4) {
+        } else if (score >= 10) {
             resultSeventh();
         } else {
             resultEighth();

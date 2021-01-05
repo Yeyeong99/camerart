@@ -3,3 +3,21 @@
 ::before {
     box-sizing: border-box;
 }
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    padding: 20px;
+}

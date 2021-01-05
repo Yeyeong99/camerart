@@ -91,7 +91,7 @@ function resultEighth(){
     question.innerHTML = "끝8";
 }
 //점수 계산
-function calculatorFirst() {
+function calculator() {
     console.log(score);
     if (click == 1) {
        sectionSecond();
@@ -150,7 +150,7 @@ for (let i = 0; i < optionBtn.length; i++) {
         }else if (i==2) {
             score +=0
         }
-        calculatorFirst();
+        calculator();
       })
     
 }

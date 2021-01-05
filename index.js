@@ -1,4 +1,4 @@
-const optionBtn = document.querySelectorAll("a");
+const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 let score = 0;
@@ -122,22 +122,10 @@ function calculator() {
     } else if (click == 3) {
         sectionFourth();
         click +=1;
-    } else if (click == 4) {
-        // optionBtn[0].addEventListener("click",function () {
-        //     sectionFourth1();
-        //     click +=1;
-        // });
-        // optionBtn[1].addEventListener("click",function () {
-        //     sectionFourth2();
-        //     click +=1;
-        // });
-        // optionBtn[2].addEventListener("click",function () {
-        //     sectionFourth3();
-        //     click +=1;
-        // });
-        sectionFifth();
-        click +=1;
-    } else if (click == 5) {
+    }  else if (click == 4) {
+       sectionFifth();
+       click +=1;
+    }else if (click == 5) {
         sectionSixth();
         click +=1;
     } else if (click == 6) {
@@ -182,10 +170,11 @@ for (let i = 0; i < optionBtn.length; i++) {
         }else if (i==2) {
             score +=0
         }
+        
         calculator();
       })
-    
 }
+
 // optionBtn[0].addEventListener("click",calculatorFirst);
 console.log(score);
 console.log(click);

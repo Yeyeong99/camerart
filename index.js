@@ -52,7 +52,7 @@ function sectionEighth(){
     optionBtn[2].innerHTML = "8.3";
 }
 
-function sectionNineth(){
+function sectionNinth(){
     question.innerHTML = "9 번째 질문";
     optionBtn[0].innerHTML = "9.1";
     optionBtn[1].innerHTML = "9.2";
@@ -115,27 +115,27 @@ function calculatorFirst() {
         sectionEighth();
         click +=1
     } else if (click == 8) {
-        sectionNineth();
+        sectionNinth();
         click +=1
     } else if (click == 9) {
         sectionTenth();
         click +=1
     } else if (click == 10) {
-        if(score >= 29) {
+        if(score >= 19) {
             resultFirst();
-        }else if (score >= 25) {
+        } else if (score >= 17) {
             resultSecond();
-        }else if (score >= 22) {
+        } else if (score >= 14) {
             resultThird();
-        }else if (score >= 18) {
+        } else if (score >= 11) {
             resultFourth();
-        }else if (score >= 14) {
+        } else if (score >= 9) {
             resultFifth();
-        }else if (score >= 10) {
+        } else if (score >= 7) {
             resultSixth();
-        }else if (score >= 7) {
+        } else if (score >= 4) {
             resultSeventh();
-        }else if (score >= 3) {
+        } else {
             resultEighth();
         }
     }
@@ -144,11 +144,11 @@ function calculatorFirst() {
 for (let i = 0; i < optionBtn.length; i++) {
     optionBtn[i].addEventListener("click", function () {
         if(i==0){
-            score +=3
+            score +=4
         }else if(i==1) {
             score +=2
         }else if (i==2) {
-            score +=1
+            score +=0
         }
         calculatorFirst();
       })

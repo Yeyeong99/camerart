@@ -1,23 +1,30 @@
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
 
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-}
+@media screen and (max-width: 576px) {
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
 
-.options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blueviolet;
+    }
+    .question {
+        margin: 10%;
+    }
+    .options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-a {
-    padding: 20px;
+    a {
+        padding: 30px 10px;
+    }
 }

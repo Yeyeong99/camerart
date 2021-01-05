@@ -2,7 +2,7 @@ const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 let score = 0;
-let click = 1;
+let click = 0;
 // 각 화면
 function sectionSecond(){
     question.innerHTML = "2 번째 질문";
@@ -17,6 +17,7 @@ function sectionThird(){
     optionBtn[2].innerHTML = "3.3";
 }
 
+
 function sectionFourth(){
     question.innerHTML = "4 번째 질문";
     optionBtn[0].innerHTML = "4.1";
@@ -25,25 +26,27 @@ function sectionFourth(){
 }
 
 function sectionFourth1(){
-    question.innerHTML = "4 번째 질문";
-    optionBtn[0].innerHTML = "4.1";
+    question.innerHTML = "4 -1번째 질문";
+    optionBtn[0].innerHTML = "4.11";
     optionBtn[1].innerHTML = "4.2";
     optionBtn[2].innerHTML = "4.3";
 }
 
 function sectionFourth2(){
-    question.innerHTML = "4 번째 질문";
-    optionBtn[0].innerHTML = "4.1";
+    question.innerHTML = "4 -2번째 질문";
+    optionBtn[0].innerHTML = "4.12";
     optionBtn[1].innerHTML = "4.2";
     optionBtn[2].innerHTML = "4.3";
 }
 
 function sectionFourth3(){
-    question.innerHTML = "4 번째 질문";
-    optionBtn[0].innerHTML = "4.1";
+    question.innerHTML = "4-3 번째 질문";
+    optionBtn[0].innerHTML = "4.13";
     optionBtn[1].innerHTML = "4.2";
     optionBtn[2].innerHTML = "4.3";
 }
+
+
 function sectionFifth(){
     question.innerHTML = "5 번째 질문";
     optionBtn[0].innerHTML = "5.1";
@@ -112,35 +115,31 @@ function resultEighth(){
 }
 //점수 계산
 function calculator() {
-    console.log(click);
-    if (click == 1) {
+    if (click == 0) {
        sectionSecond();
         click +=1;
-    } else if (click == 2) {
+    } else if (click == 1) {
         sectionThird();
         click +=1;
-    } else if (click == 3) {
-        sectionFourth();
-        click +=1;
-    }  else if (click == 4) {
+    } else if (click ==3) {
        sectionFifth();
        click +=1;
-    }else if (click == 5) {
+    }else if (click == 4) {
         sectionSixth();
         click +=1;
-    } else if (click == 6) {
+    } else if (click == 5) {
         sectionSeventh();
         click +=1;
-    } else if (click == 7) {
+    } else if (click == 6) {
         sectionEighth();
         click +=1;
-    } else if (click == 8) {
+    } else if (click == 7) {
         sectionNinth();
         click +=1;
-    } else if (click == 9) {
+    } else if (click == 8) {
         sectionTenth();
         click +=1;
-    } else if (click == 10) {
+    } else if (click == 9) {
         if(score >= 19) {
             resultFirst();
         } else if (score >= 17) {
@@ -159,10 +158,11 @@ function calculator() {
             resultEighth();
         }
     }
+    console.log(click);
 }
 
 for (let i = 0; i < optionBtn.length; i++) {
-    optionBtn[i].addEventListener("click", function () {
+    optionBtn[i].addEventListener("click", function (e) {
         if(i==0){
             score +=4
         }else if(i==1) {
@@ -170,11 +170,23 @@ for (let i = 0; i < optionBtn.length; i++) {
         }else if (i==2) {
             score +=0
         }
-        
-        calculator();
+        if (click !== 2) {
+            calculator();
+        }else {
+            if(e.target.innerHTML === "3.1") {
+                sectionFourth1();
+                console.log(e.target)
+            } else if (e.target.innerHTML === "3.2") {
+                sectionFourth2();
+                console.log(e.target)
+            } else if (e.target.innerHTML === "3.3") {
+                sectionFourth3();
+                console.log(e.target)
+            }
+            
+            click +=1;
+        }
       })
 }
 
 // optionBtn[0].addEventListener("click",calculatorFirst);
-console.log(score);
-console.log(click);

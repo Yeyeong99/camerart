@@ -1,6 +1,8 @@
 const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
+const options = document.querySelector("div.options");
+const shareBtn = document.querySelector(".addthis_inline_share_toolbox");
 let score = 0;
 let click = 0;
 // 각 화면
@@ -113,6 +115,7 @@ function resultSeventh(){
 function resultEighth(){
     question.innerHTML = "끝8";
 }
+
 //점수 계산
 function calculator() {
     if (click == 0) {
@@ -157,6 +160,7 @@ function calculator() {
         } else {
             resultEighth();
         }
+        shareBtn.classList.remove("hide")
         console.log(score);
     }
     console.log(click);
@@ -173,6 +177,7 @@ for (let i = 0; i < optionBtn.length; i++) {
         }
         if (click !== 2) {
             calculator();
+            
         }else {
             if(e.target.innerHTML === "3.1") {
                 sectionFourth1();
@@ -184,7 +189,6 @@ for (let i = 0; i < optionBtn.length; i++) {
                 sectionFourth3();
                 console.log(e.target)
             }
-            
             click +=1;
         }
       })

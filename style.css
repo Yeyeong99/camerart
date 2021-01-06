@@ -37,6 +37,13 @@
     width: 300%;
   }
 
+  .addthis_inline_share_toolbox {
+    position: absolute;
+    bottom: 20px;
+  }
+  .hide {
+    display: none;
+  }
   footer {
     position: absolute;
     bottom: 0;

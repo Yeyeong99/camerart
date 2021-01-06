@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+    background-image: url(./로고.jpg);
   }
   main {
     display: flex;

@@ -1,5 +1,3 @@
-import {App} from './gradient/app.js'
-
 const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
@@ -7,6 +5,7 @@ const options = document.querySelector("div.options");
 const shareBtn = document.querySelector(".addthis_inline_share_toolbox");
 let score = 0;
 let click = 0;
+console.log(optionBtn);
 // 각 화면
 function sectionSecond(){
     question.innerHTML = "2 번째 질문";

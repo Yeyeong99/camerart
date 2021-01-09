@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Camerart</title>
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
     <main>
-        <h1>제목</h1>
-        <img src="./로고.jpg" alt="#">
-        <a href="./env.html">시작</a>
+        <div class="question">
+            <h2>제목</h2>
+            <h1>질문</h1>
+        </div>
+        <div class="options">
+            <button class="first">선택지 1</button>
+            <button class="second">선택지 2</button>
+            <button class="third">선택지 3</button>
+        </div>  
+
     </main>
-    <!-- <div class="addthis_inline_share_toolbox hide"></div>    -->
-    <a id="kakao-link-btn" href="javascript:sendLink()">
+  
+    <a id="kakao-link-btn" class="hide" href="javascript:sendLink()">
         <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
     </a>
     <footer>
-        ⓒ 카메랄트
+    <footer>
+        ⓒ 카메랄트 | <a href="./index.html">home</a>
     </footer>
-    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ff58cd4e153e1f8"></script> -->
-    
+    <!-- <script tyep="module" src="./index.js"></script> -->
+    <script type="module" src="./gradient/app.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ff58cd4e153e1f8"></script>
     <script type='text/javascript'>
         //<![CDATA[
           // // 사용할 앱의 JavaScript 키를 설정해 주세요.

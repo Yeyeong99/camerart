@@ -78,6 +78,12 @@ class App {
 }
 
 // 각 화면
+function sectionFirst(){
+    question.innerHTML = "1 번째 질문";
+    optionBtn[0].innerHTML = "1.1";
+    optionBtn[1].innerHTML = "1.2";
+    optionBtn[2].innerHTML = "1.3";
+}
 function sectionSecond(){
     question.innerHTML = "2 번째 질문";
     optionBtn[0].innerHTML = "2.1";
@@ -198,30 +204,33 @@ function resultEighth(){
 //점수 계산
 function calculator() {
     if (click == 0) {
-       sectionSecond();
+        sectionFirst();
         click +=1;
     } else if (click == 1) {
-        sectionThird();
+        sectionSecond();
         click +=1;
-    } else if (click ==3) {
-       sectionFifth();
+    } else if (click ==2) {
+       sectionThird();
        click +=1;
     }else if (click == 4) {
-        sectionSixth();
+        sectionFifth();
         click +=1;
     } else if (click == 5) {
-        sectionSeventh();
+        sectionSixth();
         click +=1;
     } else if (click == 6) {
-        sectionEighth();
+        sectionSeventh();
         click +=1;
     } else if (click == 7) {
-        sectionNinth();
+        sectionEighth();
         click +=1;
     } else if (click == 8) {
-        sectionTenth();
+        sectionNinth();
         click +=1;
     } else if (click == 9) {
+        sectionTenth();
+        click +=1;
+    } else if (click ==10) {
         new App();
         removeAllChild(options)
         if(score >= 36) {
@@ -257,7 +266,7 @@ for (let i = 0; i < optionBtn.length; i++) {
             score +=0;
         }
         console.log(score);
-        if (click !== 2) {
+        if (click !== 3) {
             calculator();
             
         }else {

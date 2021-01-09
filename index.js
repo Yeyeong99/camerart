@@ -1,3 +1,5 @@
+import {App} from './gradient/app.js'
+
 const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
@@ -143,6 +145,7 @@ function calculator() {
         sectionTenth();
         click +=1;
     } else if (click == 9) {
+        new App();
         if(score >= 36) {
             resultFirst();
         } else if (score >= 32) {
@@ -169,12 +172,13 @@ function calculator() {
 for (let i = 0; i < optionBtn.length; i++) {
     optionBtn[i].addEventListener("click", function (e) {
         if(i==0){
-            score +=4
+            score +=4;
         }else if(i==1) {
-            score +=2
+            score +=2;
         }else if (i==2) {
-            score +=0
+            score +=0;
         }
+        console.log(score);
         if (click !== 2) {
             calculator();
             

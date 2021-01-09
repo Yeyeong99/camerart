@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
     <title>Camerart</title>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
     <main>
@@ -12,13 +13,55 @@
         <img src="./로고.jpg" alt="#">
         <a href="./env.html">시작</a>
     </main>
-    <div class="addthis_inline_share_toolbox hide"></div>   
-
+    <!-- <div class="addthis_inline_share_toolbox hide"></div>    -->
+    <a id="kakao-link-btn" href="javascript:sendLink()">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+    </a>
     <footer>
         ⓒ 카메랄트
     </footer>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ff58cd4e153e1f8"></script>
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ff58cd4e153e1f8"></script> -->
     
-
+    <script type='text/javascript'>
+        //<![CDATA[
+          // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+          Kakao.init('1465378692b4919d6b53f9aaf650bde1');
+          // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+          Kakao.Link.createDefaultButton({
+            container: '#kakao-link-btn',
+            objectType: 'feed',
+            content: {
+              title: '제목',
+              description: '#환경 #카메랄트 #7번째전시',
+              imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+              link: {
+                mobileWebUrl: 'https://camerart7th.netlify.app',
+                webUrl: 'https://camerart7th.netlify.app'
+              }
+            },
+            social: {
+              likeCount: 286,
+              commentCount: 45,
+              sharedCount: 845
+            },
+            buttons: [
+              {
+                title: '웹으로 보기',
+                link: {
+                  mobileWebUrl: 'https://camerart7th.netlify.app',
+                  webUrl: 'https://camerart7th.netlify.app'
+                }
+              },
+              {
+                title: '앱으로 보기',
+                link: {
+                  mobileWebUrl: 'https://camerart7th.netlify.app',
+                  webUrl: 'https://camerart7th.netlify.app'
+                }
+              }
+            ]
+          });
+        //]]>
+    </script>
 </body>
 </html>

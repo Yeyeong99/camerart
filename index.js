@@ -1,3 +1,5 @@
+import {COLORS, App} from "./gradient/app.js"
+
 const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
@@ -92,6 +94,12 @@ function sectionTenth(){
     optionBtn[2].innerHTML = "10.3";
 }
 
+function removeAllChild(array) {
+    while(array.hasChildNodes())
+    {
+        array.removeChild(array.firstChild);
+    }
+}
 function resultFirst(){
     question.innerHTML = "끝1";
 }
@@ -145,6 +153,7 @@ function calculator() {
         click +=1;
     } else if (click == 9) {
         new App();
+        removeAllChild(options)
         if(score >= 36) {
             resultFirst();
         } else if (score >= 32) {

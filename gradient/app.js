@@ -5,8 +5,9 @@ const main = document.querySelector("main");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 const options = document.querySelector("div.options");
-const shareBtn = document.querySelector("#kakao-link-btn");
+const shareBtn = document.querySelector(".share-download");
 const backGround = document.querySelector(".background");
+const footer = document.querySelector("footer");
 
 let score = 0;
 let click = 0;
@@ -113,34 +114,43 @@ function removeAllChild(array) {
 function resultFirst(){
     question.innerHTML = "끝1";
     backGround.style.filter = "opacity(0.9)";
+    document.getElementById('download').setAttribute('href', './result1.jpg')
 }
 function resultSecond(){
     question.innerHTML = "끝2";
     backGround.style.filter = "opacity(0.8)";
+    document.getElementById('download').setAttribute('href', './result2.jpg')
 }
 function resultThird(){
     question.innerHTML = "끝3";
     backGround.style.filter = "opacity(0.7)";
+    document.getElementById('download').setAttribute('href', './result3.jpg')
 }
 function resultFourth(){
     question.innerHTML = "끝4";
     backGround.style.filter = "opacity(0.6)";
+    document.getElementById('download').setAttribute('href', './result4.jpg')
+
 }
 function resultFifth(){
     question.innerHTML = "끝5";
     backGround.style.filter = "opacity(0.5)";
+    document.getElementById('download').setAttribute('href', './result5.jpg')
 }
 function resultSixth(){
     question.innerHTML = "끝6";
     backGround.style.filter = "opacity(0.4)";
+    document.getElementById('download').setAttribute('href', './result6.jpg')
 }
 function resultSeventh(){
     question.innerHTML = "끝7";
     backGround.style.filter = "opacity(0.2)";
+    document.getElementById('download').setAttribute('href', './result7.jpg')
 }
 function resultEighth(){
     question.innerHTML = "끝8";
     backGround.style.filter = "opacity(0)";
+    document.getElementById('download').setAttribute('href', './result8.jpg')
 }
 
 const COLORS = [
@@ -248,6 +258,7 @@ function calculator() {
         removeAllChild(options);
         backGround.classList.remove("hide");
         main.style.color = "white";
+        footer.style.color = "white";
         //appendChild
         if(score >= 36) {
             resultFirst();

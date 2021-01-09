@@ -54,7 +54,7 @@ canvas {
   height: 100%;
   width: 100%;
 }
-#kakao-link-btn {
+.share-download {
   z-index: 1;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -67,6 +67,7 @@ canvas {
 }
 
 footer {
+  z-index: 1;
   position: absolute;
   bottom: 0;
   transform: translate(-50%, -50%);

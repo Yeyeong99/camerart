@@ -49,12 +49,13 @@ canvas {
   height: 100%;
   width: 100%;
 }
-.addthis_inline_share_toolbox {
+#kakao-link-btn {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  bottom: 20px;
+  bottom: 10%;
 }
+
 .hide {
   display: none;
 }

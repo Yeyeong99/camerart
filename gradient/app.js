@@ -4,7 +4,7 @@ const optionBtn = document.querySelectorAll("button");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 const options = document.querySelector("div.options");
-const shareBtn = document.querySelector(".addthis_inline_share_toolbox");
+const shareBtn = document.querySelector("#kakao-link-btn");
 let score = 0;
 let click = 0;
 

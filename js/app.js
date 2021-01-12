@@ -32,7 +32,7 @@ function removeAllChild(array) {
 
 //결과
 function resultFirst(){
-    question.innerHTML = "끝1";
+    question.innerHTML = "끝";
     backGround.style.filter = "opacity(0.9)";
     document.getElementById('download').setAttribute('href', './result1.jpg')
 }
@@ -146,7 +146,7 @@ class App {
 //클릭 계산
 function clickCalculator() {
     if (click == 0) {
-        changeSection("질문\n1입니다", "질문1", "11212121222222212121212\n1221212121221121212122212", "옵션2", "옵션3")
+        changeSection("wnfqdflka", "질문1", "11212121\n222222212121212\n122121212\n1221121212122212", "옵션2", "옵션3")
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
         click +=1;

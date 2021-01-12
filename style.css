@@ -28,7 +28,7 @@ main {
   align-items: center;
 }
 
-.question {
+.question-container {
   margin: 10%;
 }
 .options {

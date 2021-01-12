@@ -34,43 +34,43 @@ function removeAllChild(array) {
 function resultFirst(){
     question.innerHTML = "끝";
     backGround.style.filter = "opacity(0.9)";
-    document.getElementById('download').setAttribute('href', './result1.jpg')
+    document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
 function resultSecond(){
     question.innerHTML = "끝2";
     backGround.style.filter = "opacity(0.8)";
-    document.getElementById('download').setAttribute('href', './result2.jpg')
+    document.getElementById('download').setAttribute('href', './img/result2.jpg')
 }
 function resultThird(){
     question.innerHTML = "끝3";
     backGround.style.filter = "opacity(0.7)";
-    document.getElementById('download').setAttribute('href', './result3.jpg')
+    document.getElementById('download').setAttribute('href', './img/result3.jpg')
 }
 function resultFourth(){
     question.innerHTML = "끝4";
     backGround.style.filter = "opacity(0.6)";
-    document.getElementById('download').setAttribute('href', './result4.jpg')
+    document.getElementById('download').setAttribute('href', './img/result4.jpg')
 
 }
 function resultFifth(){
     question.innerHTML = "끝5";
     backGround.style.filter = "opacity(0.5)";
-    document.getElementById('download').setAttribute('href', './result5.jpg')
+    document.getElementById('download').setAttribute('href', './img/result5.jpg')
 }
 function resultSixth(){
     question.innerHTML = "끝6";
     backGround.style.filter = "opacity(0.4)";
-    document.getElementById('download').setAttribute('href', './result6.jpg')
+    document.getElementById('download').setAttribute('href', './img/result6.jpg')
 }
 function resultSeventh(){
     question.innerHTML = "끝7";
     backGround.style.filter = "opacity(0.2)";
-    document.getElementById('download').setAttribute('href', './result7.jpg')
+    document.getElementById('download').setAttribute('href', './img/result7.jpg')
 }
 function resultEighth(){
     question.innerHTML = "끝8";
     backGround.style.filter = "opacity(0)";
-    document.getElementById('download').setAttribute('href', './result8.jpg')
+    document.getElementById('download').setAttribute('href', './img/result8.jpg')
 }
 
 //그라데이션

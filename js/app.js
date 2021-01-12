@@ -13,97 +13,16 @@ let score = 0;
 let click = 0;
 
 // 각 화면
-function sectionFirst(){
-    question.innerHTML = "1 번째 질문";
-    optionBtn[0].innerHTML = "1.1";
-    optionBtn[1].innerHTML = "1.2";
-    optionBtn[2].innerHTML = "1.3";
-}
-function sectionSecond(){
-    question.innerHTML = "2 번째 질문";
-    optionBtn[0].innerHTML = "2.1";
-    optionBtn[1].innerHTML = "2.2";
-    optionBtn[2].innerHTML = "2.3";
-}
-function sectionThird(){
-    question.innerHTML = "3 번째 질문";
-    optionBtn[0].innerHTML = "3.1";
-    optionBtn[1].innerHTML = "3.2";
-    optionBtn[2].innerHTML = "3.3";
+
+function changeSection(detail, quest, option1, option2, option3) {  
+    explanation.innerHTML = detail
+    question.innerHTML = quest
+    optionBtn[0].innerHTML = option1;
+    optionBtn[1].innerHTML = option2;
+    optionBtn[2].innerHTML = option3;
 }
 
-
-function sectionFourth(){
-    question.innerHTML = "4 번째 질문";
-    optionBtn[0].innerHTML = "4.1";
-    optionBtn[1].innerHTML = "4.2";
-    optionBtn[2].innerHTML = "4.3";
-}
-
-function sectionFourth1(){
-    question.innerHTML = "4 -1번째 질문";
-    optionBtn[0].innerHTML = "4.11";
-    optionBtn[1].innerHTML = "4.2";
-    optionBtn[2].innerHTML = "4.3";
-}
-
-function sectionFourth2(){
-    question.innerHTML = "4 -2번째 질문";
-    optionBtn[0].innerHTML = "4.12";
-    optionBtn[1].innerHTML = "4.2";
-    optionBtn[2].innerHTML = "4.3";
-}
-
-function sectionFourth3(){
-    question.innerHTML = "4-3 번째 질문";
-    optionBtn[0].innerHTML = "4.13";
-    optionBtn[1].innerHTML = "4.2";
-    optionBtn[2].innerHTML = "4.3";
-}
-
-
-function sectionFifth(){
-    question.innerHTML = "5 번째 질문";
-    optionBtn[0].innerHTML = "5.1";
-    optionBtn[1].innerHTML = "5.2";
-    optionBtn[2].innerHTML = "5.3";
-}
-
-function sectionSixth(){
-    question.innerHTML = "6 번째 질문";
-    optionBtn[0].innerHTML = "6.1";
-    optionBtn[1].innerHTML = "6.2";
-    optionBtn[2].innerHTML = "6.3";
-}
-
-function sectionSeventh(){
-    question.innerHTML = "7 번째 질문";
-    optionBtn[0].innerHTML = "7.1";
-    optionBtn[1].innerHTML = "7.2";
-    optionBtn[2].innerHTML = "7.3";
-}
-
-function sectionEighth(){
-    question.innerHTML = "8 번째 질문";
-    optionBtn[0].innerHTML = "8.1";
-    optionBtn[1].innerHTML = "8.2";
-    optionBtn[2].innerHTML = "8.3";
-}
-
-function sectionNinth(){
-    question.innerHTML = "9 번째 질문";
-    optionBtn[0].innerHTML = "9.1";
-    optionBtn[1].innerHTML = "9.2";
-    optionBtn[2].innerHTML = "9.3";
-}
-
-function sectionTenth(){
-    question.innerHTML = "10 번째 질문";
-    optionBtn[0].innerHTML = "10.1";
-    optionBtn[1].innerHTML = "10.2";
-    optionBtn[2].innerHTML = "10.3";
-}
-
+//마지막 화면 
 function removeAllChild(array) {
     while(array.hasChildNodes())
     {
@@ -111,6 +30,7 @@ function removeAllChild(array) {
     }
 }
 
+//결과
 function resultFirst(){
     question.innerHTML = "끝1";
     backGround.style.filter = "opacity(0.9)";
@@ -153,6 +73,7 @@ function resultEighth(){
     document.getElementById('download').setAttribute('href', './result8.jpg')
 }
 
+//그라데이션
 const COLORS = [
     {r :240, g: 161, b:118},
     {r :247, g: 77, b:153},
@@ -222,36 +143,36 @@ class App {
     }
 }
 
-//점수 계산
-function calculator() {
+//클릭 계산
+function clickCalculator() {
     if (click == 0) {
-        sectionFirst();
+        changeSection("질문\n1입니다", "질문1", "11212121222222212121212\n1221212121221121212122212", "옵션2", "옵션3")
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
         click +=1;
     } else if (click == 1) {
-        sectionSecond();
+        changeSection("질문 2입니다", "질문2", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click ==2) {
-       sectionThird();
-       click +=1;
+        changeSection("질문 3입니다", "질문3", "옵션1", "옵션2", "옵션3")
+        click +=1;
     }else if (click == 4) {
-        sectionFifth();
+        changeSection("질문 5입니다", "질문5", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click == 5) {
-        sectionSixth();
+        changeSection("질문 6입니다", "질문6", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click == 6) {
-        sectionSeventh();
+        changeSection("질문 7입니다", "질문7", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click == 7) {
-        sectionEighth();
+        changeSection("질문\n 8입니다", "질문8", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click == 8) {
-        sectionNinth();
+        changeSection("질문 9입니다", "질문9", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click == 9) {
-        sectionTenth();
+        changeSection("질문 10입니다", "질문10", "옵션1", "옵션2", "옵션3")
         click +=1;
     } else if (click ==10) {
         new App();
@@ -283,6 +204,8 @@ function calculator() {
     console.log(click);
 }
 
+
+//점수 계산 결과
 for (let i = 0; i < optionBtn.length; i++) {
     optionBtn[i].addEventListener("click", function (e) {
         if(i==0){
@@ -294,17 +217,17 @@ for (let i = 0; i < optionBtn.length; i++) {
         }
         console.log(score);
         if (click !== 3) {
-            calculator();
+            clickCalculator();
             
         }else {
-            if(e.target.innerHTML === "3.1") {
-                sectionFourth1();
+            if(e.target.innerHTML === "옵션1") {
+                changeSection("4-1", "4-1 질문입니다", "옵션1", "옵션2", "옵션3")
                 console.log(e.target)
-            } else if (e.target.innerHTML === "3.2") {
-                sectionFourth2();
+            } else if (e.target.innerHTML === "옵션2") {
+                changeSection("4-2", "4-2 질문입니다", "옵션1", "옵션2", "옵션3")
                 console.log(e.target)
-            } else if (e.target.innerHTML === "3.3") {
-                sectionFourth3();
+            } else if (e.target.innerHTML === "옵션3") {
+                changeSection("4-3", "4-3 질문입니다", "옵션1", "옵션2", "옵션3")
                 console.log(e.target)
             }
             click +=1;

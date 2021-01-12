@@ -61,7 +61,9 @@ canvas {
   left: 50%;
   bottom: 10%;
 }
-
+#kakao-link-btn > img {
+  border-radius: 50%;
+}
 .hide {
   display: none;
 }

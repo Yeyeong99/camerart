@@ -2,6 +2,7 @@ import { GlowParticle } from "./gradient.js";
 
 const optionBtn = document.querySelectorAll("button");
 const main = document.querySelector("main");
+const h3 = document.querySelector("h3");
 const explanation = document.querySelector("h2");
 const question = document.querySelector("h1");
 const options = document.querySelector("div.options");
@@ -32,42 +33,49 @@ function removeAllChild(array) {
 
 //결과
 function resultFirst(){
+    explanation.innerHTML = "지구는 일회용이 아니에요"
     question.innerHTML = "끝";
     backGround.style.filter = "opacity(0.9)";
     document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
 function resultSecond(){
+    explanation.innerHTML = "최악은 면했군요"
     question.innerHTML = "끝2";
     backGround.style.filter = "opacity(0.8)";
     document.getElementById('download').setAttribute('href', './img/result2.jpg')
 }
 function resultThird(){
+    explanation.innerHTML = "많이 노력하는 편이 좋겠어요"
     question.innerHTML = "끝3";
     backGround.style.filter = "opacity(0.7)";
     document.getElementById('download').setAttribute('href', './img/result3.jpg')
 }
 function resultFourth(){
+    explanation.innerHTML = "그럭저럭 하지만 아직 부족해요"
     question.innerHTML = "끝4";
     backGround.style.filter = "opacity(0.6)";
     document.getElementById('download').setAttribute('href', './img/result4.jpg')
-
 }
 function resultFifth(){
+    explanation.innerHTML = "조금은 노력하면 좋겠어요"
     question.innerHTML = "끝5";
     backGround.style.filter = "opacity(0.5)";
     document.getElementById('download').setAttribute('href', './img/result5.jpg')
 }
 function resultSixth(){
-    question.innerHTML = "끝6";
+    explanation.innerHTML = "당신은 많이 노력하는 사람이군요!"
+    question.innerHTML = "끝 6";
     backGround.style.filter = "opacity(0.4)";
     document.getElementById('download').setAttribute('href', './img/result6.jpg')
 }
 function resultSeventh(){
+    explanation.innerHTML = "정말 대단해요!"
     question.innerHTML = "끝7";
     backGround.style.filter = "opacity(0.2)";
     document.getElementById('download').setAttribute('href', './img/result7.jpg')
 }
 function resultEighth(){
+    explanation.innerHTML = "청정지역"
     question.innerHTML = "끝8";
     backGround.style.filter = "opacity(0)";
     document.getElementById('download').setAttribute('href', './img/result8.jpg')
@@ -146,33 +154,37 @@ class App {
 //클릭 계산
 function clickCalculator() {
     if (click == 0) {
-        changeSection("wnfqdflka", "질문1", "11212121\n222222212121212\n122121212\n1221121212122212", "옵션2", "옵션3")
+        changeSection("아침에 일어난 당신!", "겨울이라" +"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.", "적당히"+"<br>"+"적정 온도로 맞춰놓자.", "귀찮으니까"+"<br>"+"대충 옷이나 입자.")
+        h3.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
         click +=1;
     } else if (click == 1) {
-        changeSection("질문 2입니다", "질문2", "옵션1", "옵션2", "옵션3")
+        changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "4개 이상", "2-3개", "0-1개")
         click +=1;
     } else if (click ==2) {
-        changeSection("질문 3입니다", "질문3", "옵션1", "옵션2", "옵션3")
+        changeSection("하암- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "둘 다 귀찮아!"+"<br>"+"집에 있는 걸로 해먹는다.")
         click +=1;
     }else if (click == 4) {
-        changeSection("질문 5입니다", "질문5", "옵션1", "옵션2", "옵션3")
+        changeSection("드디어 점심을 먹는 당신."+"<br>"+"심심해서 동영상을 볼까 해요.", "영상을 틀었는데.."+"<br>"+"저화질로 나오네요?", "최고화질 아니면.. 왜 봐?"+"<br>"+"무조건 최고화질로 본다", "그냥 틀어지는 대로 본다", "…귀찮다. 그냥 화면을 끈다.")
+        optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 5) {
-        changeSection("질문 6입니다", "질문6", "옵션1", "옵션2", "옵션3")
+        changeSection("바깥공기를 쐬고 싶어졌다. 집 앞 카페에 왔어요.", "아이스아메리카노를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에"+"<br>"+"담아갈게요~", "카페에서 느긋하게"+"<br>"+"마셔야지."+"<br>"+"머그잔에 담아주세요! ", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
         click +=1;
     } else if (click == 6) {
-        changeSection("질문 7입니다", "질문7", "옵션1", "옵션2", "옵션3")
+        changeSection("집에 돌아왔네요.", "샤워를 하려고 해요.", "느긋하게 씻어야죠"+"<br>"+"(15분 초과)", "호다닥 씻을래요"+"<br>"+"(10분 내외)", "땀도 안흘렸는데…"+"<br>"+"양치랑 세수만")
         click +=1;
     } else if (click == 7) {
-        changeSection("질문\n 8입니다", "질문8", "옵션1", "옵션2", "옵션3")
+        changeSection("세탁기 앞에 선 당신.", "세탁기 물의 온도는?", "그냥 세탁기가 맞춰놓은 대로", "옵션2", "내가 설정해야지! 별도로 설정한다")
+        optionBtn[1].classList.add("hide");
         click +=1;
     } else if (click == 8) {
-        changeSection("질문 9입니다", "질문9", "옵션1", "옵션2", "옵션3")
+        changeSection("띠링- 새로운 메일이 왔네요!", "당신의 메일함은", "메일…그런거…외일거?"+"<br>"+"안 건드려서 미확인 메일이 10000개 넘는다", "메일이 쌓여있긴 하지만… 그래도 확인은 바로 함!"+"<br>"+"미확인 메일은 없다", "확인하고 바로 지우는 타입."+"<br>"+"메일함이 깨끗하다")
+        optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 9) {
-        changeSection("질문 10입니다", "질문10", "옵션1", "옵션2", "옵션3")
+        changeSection("휴- 하루가 다 갔네요."+"<br>"+"자기 전 스크린 타임을"+"<br>"+"확인 해 보아요.", "당신의 핸드폰 사용 시간은?", "6시간 이상", "3~6시간", "3시간 이하")
         click +=1;
     } else if (click ==10) {
         new App();
@@ -218,17 +230,14 @@ for (let i = 0; i < optionBtn.length; i++) {
         console.log(score);
         if (click !== 3) {
             clickCalculator();
-            
         }else {
-            if(e.target.innerHTML === "옵션1") {
-                changeSection("4-1", "4-1 질문입니다", "옵션1", "옵션2", "옵션3")
-                console.log(e.target)
-            } else if (e.target.innerHTML === "옵션2") {
-                changeSection("4-2", "4-2 질문입니다", "옵션1", "옵션2", "옵션3")
-                console.log(e.target)
-            } else if (e.target.innerHTML === "옵션3") {
-                changeSection("4-3", "4-3 질문입니다", "옵션1", "옵션2", "옵션3")
-                console.log(e.target)
+            if(e.target.innerHTML === "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.") {
+                changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "육류", "옵션2", "비건")
+                optionBtn[1].classList.add("hide");
+            } else if (e.target.innerHTML === "마트에 가야지!"+"<br>"+"장을 보러간다. ") {
+                changeSection("장을 보기 위해 집을 나섰어요.", "마트까지", "부릉부릉~"+"<br>"+"자가를 이용한다.", "대중교통을 이용한다.", "산책도 하고 좋지 뭐!"+"<br>"+"도보를 이용한다.")
+            } else if (e.target.innerHTML === "둘 다 귀찮아!"+"<br>"+"집에 있는 걸로 해먹는다.") {
+                changeSection("집에서 요리를 하는 당신.", "양은 얼마나 할까요?", "자고로 부족한 것 보다는"+"<br>"+"많은 게 낫지. 많이 한다!", "옵션2", "음식물 쓰레기"+"<br>"+"버리기 귀찮아.적게 한다.")
             }
             click +=1;
         }

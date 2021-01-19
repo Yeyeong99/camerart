@@ -75,7 +75,7 @@ function resultSeventh(){
     document.getElementById('download').setAttribute('href', './img/result7.jpg')
 }
 function resultEighth(){
-    explanation.innerHTML = "청정지역"
+    explanation.innerHTML = "청정지역";
     question.innerHTML = "끝8";
     backGround.style.filter = "opacity(0)";
     document.getElementById('download').setAttribute('href', './img/result8.jpg')

@@ -150,9 +150,6 @@ class App {
 function clickCalculator() {
     if (click == 0) {
         changeSection("아침에 일어난 당신!", "겨울이라" +"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.", "적당히"+"<br>"+"적정 온도로 맞춰놓자.", "귀찮으니까"+"<br>"+"대충 옷이나 입자.")
-        detail.classList.add("hide");
-        optionBtn[1].classList.remove("hide");
-        optionBtn[2].classList.remove("hide");
         body.style.backgroundColor = "#c2d6bf";
         compoFirst.style.backgroundImage = "url('./img/thermo.png')";
         compoFirst.style.backgroundSize = "cover";
@@ -161,6 +158,9 @@ function clickCalculator() {
         compoSecond.classList.add("move");
         main.style.height = "50%";
         main.style.bottom = "0";
+        detail.classList.add("hide");
+        optionBtn[1].classList.remove("hide");
+        optionBtn[2].classList.remove("hide");
         click +=1;
     } else if (click == 1) {
         changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")

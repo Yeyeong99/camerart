@@ -71,6 +71,17 @@ main {
   height: 100%;
   transform: translate(100%, 0);
 }
+
+.compo-three {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.compo-four {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 /*page 1*/
 .move {
   transform: translate(0, 0);

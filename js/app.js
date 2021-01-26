@@ -12,6 +12,8 @@ const backGround = document.querySelector(".background");
 const footer = document.querySelector("footer");
 const compoFirst = document.querySelector(".compo-one");
 const compoSecond = document.querySelector(".compo-two");
+const compoThird = document.querySelector(".compo-three");
+const compoFourth = document.querySelector(".compo-four");
 let score = 0;
 let click = 0;
 
@@ -163,7 +165,11 @@ function clickCalculator() {
     } else if (click == 1) {
         changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
         body.classList.remove("result-first");
-        
+        body.style.backgroundImage = "url('./img/outside.png')";
+        body.style.backgroundSize = "cover";
+        compoFirst.style.backgroundImage = "url('./img/biggestbox.png')";
+        compoSecond.style.backgroundImage = "url('./img/secondbox.png')";
+        compoThird.style.backgroundImage = "url('./img/firstbox.png')"
         click +=1;
     } else if (click ==2) {
         changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")

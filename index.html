@@ -3,67 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <title>Camerart</title>
 </head>
 <body>
-    <main>
-        <div class="question-container">
-            <h2>당신의 하루는 어떤가요?</h2>
-            <h1>당신의 일상 속 크고 작은 영향력을 알아보아요.</h1>
-            <h3><br>결과 다운로드를 위해 크롬 또는 네이버에서 실행할 것을 권장합니다.</h3>
-        </div>
-        <div class="options">
-            <button class="first">시작</button>
-            <button class="second hide">선택지 2</button>
-            <button class="third hide">선택지 3</button>
-        </div>  
-
-    </main>
-    <div class="share-download hide">
-      <a id="kakao-link-btn"  href="javascript:sendLink()">
-        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
-      </a>
-      <a href="./로고.jpg" id="download" download > 결과 다운로드</a>
-    </div>
-    <footer>
-        ⓒ 카메랄트 | <a href="https://www.instagram.com/camer.art/">home</a>
-    </footer>
-    <div class="background hide">
-    </div>
-    <script type="module" src="./js/app.js"></script>
-    <script type='text/javascript'>
-        //<![CDATA[
-          // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-          Kakao.init('1465378692b4919d6b53f9aaf650bde1');
-          // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-          Kakao.Link.createDefaultButton({
-            container: '#kakao-link-btn',
-            objectType: 'feed',
-            content: {
-              title: '당신은 환경지킴이인가요?',
-              description: '#환경 #카메랄트 #7번째전시',
-              imageUrl: 'https://i.ibb.co/r79VFgB/image.jpg',
+  <main>
+      <div class="question-container">
+          <h2>당신의 하루는 어떤가요?</h2>
+          <h1>당신의 일상 속 크고 작은 영향력을 알아보아요.</h1>
+          <h3><br>결과 다운로드를 위해 크롬 또는 네이버에서 실행할 것을 권장합니다.</h3>
+      </div>
+      <div class="options">
+          <button class="first">시작</button>
+          <button class="second hide">선택지 2</button>
+          <button class="third hide">선택지 3</button>
+      </div>  
+  </main>
+    <div class="compo-one"></div>
+    <div class="compo-two"></div>
+  <div class="share-download hide">
+    <a id="kakao-link-btn"  href="javascript:sendLink()">
+      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+    </a>
+    <a href="./로고.jpg" id="download" download > 결과 다운로드</a>
+  </div>
+  <footer>
+      ⓒ 카메랄트 | <a href="https://www.instagram.com/camer.art/">home</a>
+  </footer>
+  <div class="background hide">
+  </div>
+  <script type="module" src="./js/app.js"></script>
+  <script type='text/javascript'>
+      //<![CDATA[
+        // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('1465378692b4919d6b53f9aaf650bde1');
+        // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+        Kakao.Link.createDefaultButton({
+          container: '#kakao-link-btn',
+          objectType: 'feed',
+          content: {
+            title: '당신은 환경지킴이인가요?',
+            description: '#환경 #카메랄트 #7번째전시',
+            imageUrl: 'https://i.ibb.co/r79VFgB/image.jpg',
+            link: {
+              mobileWebUrl: 'https://camerart7th.netlify.app',
+              webUrl: 'https://camerart7th.netlify.app'
+            }
+          },
+          
+          buttons: [
+            {
+              title: '테스트 하기',
               link: {
                 mobileWebUrl: 'https://camerart7th.netlify.app',
                 webUrl: 'https://camerart7th.netlify.app'
               }
-            },
-            
-            buttons: [
-              {
-                title: '테스트 하기',
-                link: {
-                  mobileWebUrl: 'https://camerart7th.netlify.app',
-                  webUrl: 'https://camerart7th.netlify.app'
-                }
-              }
-            ]
-          });
-        //]]>
-    </script>
+            }
+          ]
+        });
+      //]]>
+  </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 import { GlowParticle } from "./gradient.js";
 
 const optionBtn = document.querySelectorAll("button");
+const body = document.querySelector("body");
 const main = document.querySelector("main");
 const question = document.querySelector("h1");
 const explanation = document.querySelector("h2");
@@ -9,7 +10,8 @@ const options = document.querySelector("div.options");
 const shareBtn = document.querySelector(".share-download");
 const backGround = document.querySelector(".background");
 const footer = document.querySelector("footer");
-
+const compoFirst = document.querySelector(".compo-one");
+const compoSecond = document.querySelector(".compo-two");
 let score = 0;
 let click = 0;
 
@@ -65,9 +67,12 @@ function resultFifth(){
 function resultSixth(){
     explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!"
     detail.innerHTML = "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?";
-    backGround.style.filter = "opacity(0)";
-    document.getElementById('download').setAttribute('href', './img/result6.jpg')
+    explanation.innerHTML = "지구는 일회용이 아니에요";
+    question.innerHTML = "끝";
+    backGround.style.filter = "opacity(0.9)";
+    document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
+
 
 //그라데이션
 const COLORS = [
@@ -146,19 +151,29 @@ function clickCalculator() {
         detail.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
+        body.style.backgroundColor = "#c2d6bf";
+        compoFirst.style.backgroundImage = "url('./img/thermo.png')";
+        compoFirst.style.backgroundSize = "cover";
+        compoSecond.style.backgroundImage = "url('./img/hand.png')";
+        compoSecond.style.backgroundSize = "cover";
+        compoSecond.classList.add("move");
+        main.style.height = "50%";
+        main.style.bottom = "0";
         click +=1;
     } else if (click == 1) {
-        changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "4개 이상", "2-3개", "0-1개")
+        changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
+        body.classList.remove("result-first");
+        
         click +=1;
     } else if (click ==2) {
-        changeSection("하암- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "둘 다 귀찮아!"+"<br>"+"집에 있는 걸로 해먹는다.")
+        changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
         click +=1;
     }else if (click == 4) {
         changeSection("드디어 점심을 먹는 당신."+"<br>"+"심심해서 동영상을 볼까 해요.", "영상을 틀었는데.."+"<br>"+"저화질로 나오네요?", "최고화질 아니면.. 왜 봐?"+"<br>"+"무조건 최고화질로 본다", "그냥 틀어지는 대로 본다", "…귀찮다. 그냥 화면을 끈다.")
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 5) {
-        changeSection("바깥공기를 쐬고 싶어졌다. 집 앞 카페에 왔어요.", "아이스아메리카노를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에"+"<br>"+"담아갈게요~", "카페에서 느긋하게"+"<br>"+"마셔야지."+"<br>"+"머그잔에 담아주세요! ", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
+        changeSection("바깥 공기를 쐬고 싶어졌다. 집 앞 카페에 왔어요.", "아이스아메리카노를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에"+"<br>"+"담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
         click +=1;
     } else if (click == 6) {
         changeSection("집에 돌아왔네요.", "샤워를 하려고 해요.", "느긋하게 씻어야죠"+"<br>"+"(15분 초과)", "호다닥 씻을래요"+"<br>"+"(10분 내외)", "땀도 안흘렸는데…"+"<br>"+"양치랑 세수만")
@@ -168,7 +183,7 @@ function clickCalculator() {
         optionBtn[1].classList.add("hide");
         click +=1;
     } else if (click == 8) {
-        changeSection("띠링- 새로운 메일이 왔네요!", "당신의 메일함은", "메일…그런거…외일거?"+"<br>"+"안 건드려서 미확인 메일이 10000개 넘는다", "메일이 쌓여있긴 하지만… 그래도 확인은 바로 함!"+"<br>"+"미확인 메일은 없다", "확인하고 바로 지우는 타입."+"<br>"+"메일함이 깨끗하다")
+        changeSection("띠링- 새로운 메일이 왔네요!", "당신의 메일함은", "메일…그런 거.. 왜 읽어?"+"<br>"+"안 건드려서 미확인 메일이 999+", "메일이 쌓여있긴 하지만…"+"<br>"+"그래도 확인은 바로 함!"+"<br>"+"남은 메일 100개 정도."+"<br>"+"미확인 메일은 없다", "확인하고 바로 지우는 타입."+"<br>"+"메일함이 깨끗하다")
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 9) {
@@ -196,12 +211,22 @@ function clickCalculator() {
         } else {
             resultSixth();
         }
-        shareBtn.classList.remove("hide")
+        shareBtn.classList.remove("hide");
         console.log(score);
     }
     console.log(click);
 }
 
+function windowWidth() {
+    if (window.innerWidth > 1366) {
+        question.innerHTML = "모바일 환경으로 접속 부탁드립니다.";
+        detail.innerHTML ="";
+        explanation.innerHTML = "";
+        optionBtn[0].classList.add("hide");
+    }
+}
+
+window.addEventListener("load", windowWidth);
 
 //점수 계산 결과
 for (let i = 0; i < optionBtn.length; i++) {
@@ -218,11 +243,11 @@ for (let i = 0; i < optionBtn.length; i++) {
             clickCalculator();
         }else {
             if(e.target.innerHTML === "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.") {
-                changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "육류", "옵션2", "비건")
+                changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "식도에 기름칠 좀 해볼까?"+"<br>"+"돈까스", "옵션2", "오늘은 산뜻하게!"+"<br>"+"볼 샐러드")
                 optionBtn[1].classList.add("hide");
             } else if (e.target.innerHTML === "마트에 가야지!"+"<br>"+"장을 보러간다. ") {
                 changeSection("장을 보기 위해 집을 나섰어요.", "마트까지", "부릉부릉~"+"<br>"+"자가를 이용한다.", "대중교통을 이용한다.", "산책도 하고 좋지 뭐!"+"<br>"+"도보를 이용한다.")
-            } else if (e.target.innerHTML === "둘 다 귀찮아!"+"<br>"+"집에 있는 걸로 해먹는다.") {
+            } else if (e.target.innerHTML === "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.") {
                 changeSection("집에서 요리를 하는 당신.", "양은 얼마나 할까요?", "자고로 부족한 것 보다는"+"<br>"+"많은 게 낫지. 많이 한다!", "옵션2", "음식물 쓰레기"+"<br>"+"버리기 귀찮아.적게 한다.")
                 optionBtn[1].classList.add("hide");
 

@@ -120,19 +120,19 @@ function clickCalculator() {
 
 //결과
 function resultFirst(){
-    explanation.innerHTML = "우리 환경을 위한 작은 실천이라도 함께 해보아요. 당신은 플라스틱 헤비 러버";
+    explanation.innerHTML = "우리 환경을 위한"+"<br>"+"작은 실천이라도 함께 해보아요."+"<br>"+"당신은 플라스틱 헤비 러버";
     detail.innerHTML = "<br>"+"당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요. 함께 합시다!";
     backGround.style.filter = "opacity(0.8)";
     document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
 function resultSecond(){
-    explanation.innerHTML = "환경을 생각해주세요! 당신은 플라스틱의 베스트 프렌드";
+    explanation.innerHTML = "환경을 생각해주세요!"+"<br>"+"당신은 플라스틱 베스트 프렌드";
     detail.innerHTML = "<br>"+"이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.";
     backGround.style.filter = "opacity(0.7)";
     document.getElementById('download').setAttribute('href', './img/result2.jpg')
 }
 function resultThird(){
-    explanation.innerHTML = "편리한 것도 좋지만, 조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러";
+    explanation.innerHTML = "편리한 것도 좋지만,"+"<br>"+"조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러";
     detail.innerHTML = "<br>"+"아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!";
     backGround.style.filter = "opacity(0.6)";
     document.getElementById('download').setAttribute('href', './img/result3.jpg')
@@ -152,8 +152,8 @@ function resultFifth(){
 function resultSixth(){
     explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!";
     detail.innerHTML = "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?";
-    backGround.style.filter = "opacity(0.9)";
-    document.getElementById('download').setAttribute('href', './img/result.jpg')
+    backGround.style.filter = "opacity(0)";
+    document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
 
 

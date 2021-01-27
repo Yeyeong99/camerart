@@ -1,6 +1,4 @@
-// import { GlowParticle } from "./gradient.js";
-
-const optionBtn = document.querySelectorAll("button");
+const optionBtn = document.querySelectorAll("ol");
 const body = document.querySelector("body");
 const main = document.querySelector("main");
 const question = document.querySelector("h1");
@@ -35,56 +33,15 @@ function removeAllChild(array) {
     }
 }
 
-//결과
-function resultFirst(){
-    explanation.innerHTML = "우리 환경을 위한 작은 실천이라도 함께 해보아요. 당신은 플라스틱 헤비 러버";
-    detail.innerHTML = "당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요. 함께 합시다!";
-    backGround.style.filter = "opacity(0.8)";
-    document.getElementById('download').setAttribute('href', './img/result1.jpg')
-}
-function resultSecond(){
-    explanation.innerHTML = "환경을 생각해주세요! 당신은 플라스틱의 베스트 프렌드";
-    detail.innerHTML = "이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.";
-    backGround.style.filter = "opacity(0.7)";
-    document.getElementById('download').setAttribute('href', './img/result2.jpg')
-}
-function resultThird(){
-    explanation.innerHTML = "편리한 것도 좋지만, 조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러";
-    detail.innerHTML = "아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!";
-    backGround.style.filter = "opacity(0.6)";
-    document.getElementById('download').setAttribute('href', './img/result3.jpg')
-}
-function resultFourth(){
-    explanation.innerHTML = "당신은 일상 속에서 틈틈이 환경을 신경 쓰는군요." +"<br>"+"당신은 나무 지킴이하는 편이 좋겠어요";
-    detail.innerHTML = "일상 속에서 조금이나마 환경을 생각하려는 움직임이 보여요. 조금의 귀찮음만 극복하면 초록빛 지구를 함께 만들어갈 수 있을 것 같아요! 함께 해주실 거죠?";
-    backGround.style.filter = "opacity(0.4)";
-    document.getElementById('download').setAttribute('href', './img/result4.jpg')
-}
-function resultFifth(){
-    explanation.innerHTML = "잘 하고 있어요!" +"<br>"+"조금 더 노력한다면 지구를 지킬 수 있는 당신은 숲 지킴이!";
-    detail.innerHTML = "당신은 지구지킴이 이전 단계인 숲 지킴이 단계에 와 있어요. 숲을 지켜주는 당신 같은 존재가 있어 다행이네요. 조금 더 나아가면 지구 지킴이가 될 수 있겠어요!";
-    backGround.style.filter = "opacity(0.2)";
-    document.getElementById('download').setAttribute('href', './img/result5.jpg')
-}
-function resultSixth(){
-    explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!";
-    detail.innerHTML = "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?";
-    backGround.style.filter = "opacity(0.9)";
-    document.getElementById('download').setAttribute('href', './img/result.jpg')
-}
-
-
-
 //클릭 계산
 function clickCalculator() {
     if (click == 0) {
-        changeSection("아침에 일어난 당신!", "겨울이라" +"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.", "적당히"+"<br>"+"적정 온도로 맞춰놓자.", "귀찮으니까"+"<br>"+"대충 옷이나 입자.")
+        changeSection("아침에 일어난 당신!", "겨울이라" +"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.", "적당히 적정 온도로 맞춰놓자.", "귀찮으니까 대충 옷이나 입자.")
         body.style.backgroundColor = "#c2d6bf";
         compoFirst.style.backgroundImage = "url('./img/thermo.png')";
         compoFirst.style.backgroundSize = "cover";
         compoSecond.style.backgroundImage = "url('./img/hand.png')";
         compoSecond.style.backgroundSize = "cover";
-        compoSecond.classList.add("move");
         main.style.height = "50%";
         main.style.bottom = "0";
         detail.classList.add("hide");
@@ -92,13 +49,16 @@ function clickCalculator() {
         optionBtn[2].classList.remove("hide");
         click +=1;
     } else if (click == 1) {
-        changeSection("띵동- 택배가 왔어요! 집 앞에 쌓인 택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
+        changeSection("띵동- 택배가 왔어요!" +"<br>"+"집 앞에 쌓인" +"<br>"+"택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
         body.classList.remove("result-first");
         body.style.backgroundImage = "url('./img/outside.png')";
         body.style.backgroundSize = "cover";
         compoFirst.style.backgroundImage = "url('./img/biggestbox.png')";
         compoSecond.style.backgroundImage = "url('./img/secondbox.png')";
-        compoThird.style.backgroundImage = "url('./img/firstbox.png')"
+        compoThird.style.backgroundImage = "url('./img/firstbox.png')";
+        compoThird.style.backgroundSize = "cover";
+        compoFourth.style.backgroundImage = "url('./img/smallbox.png')";
+        compoFourth.style.backgroundSize = "cover";
         click +=1;
     } else if (click ==2) {
         changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
@@ -108,7 +68,13 @@ function clickCalculator() {
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 5) {
-        changeSection("바깥 공기를 쐬고 싶어졌다. 집 앞 카페에 왔어요.", "아이스아메리카노를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에"+"<br>"+"담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
+        changeSection("바깥 공기를 쐬고 싶어졌다." +"<br>"+"집 앞 카페에 왔어요.", "음료를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에 담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
+        body.style.backgroundImage = "url('./img/road.png')";
+        compoFirst.style.backgroundImage = "url('./img/road2.png')";
+        compoFirst.style.backgroundSize = "cover";
+        compoSecond.style.backgroundImage = "";
+        compoThird.style.backgroundImage = "";
+        compoFourth.style.backgroundImage= "";
         click +=1;
     } else if (click == 6) {
         changeSection("집에 돌아왔네요.", "샤워를 하려고 해요.", "느긋하게 씻어야죠"+"<br>"+"(15분 초과)", "호다닥 씻을래요"+"<br>"+"(10분 내외)", "땀도 안흘렸는데…"+"<br>"+"양치랑 세수만")
@@ -150,6 +116,48 @@ function clickCalculator() {
     }
     console.log(click);
 }
+
+
+//결과
+function resultFirst(){
+    explanation.innerHTML = "우리 환경을 위한 작은 실천이라도 함께 해보아요. 당신은 플라스틱 헤비 러버";
+    detail.innerHTML = "<br>"+"당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요. 함께 합시다!";
+    backGround.style.filter = "opacity(0.8)";
+    document.getElementById('download').setAttribute('href', './img/result1.jpg')
+}
+function resultSecond(){
+    explanation.innerHTML = "환경을 생각해주세요! 당신은 플라스틱의 베스트 프렌드";
+    detail.innerHTML = "<br>"+"이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.";
+    backGround.style.filter = "opacity(0.7)";
+    document.getElementById('download').setAttribute('href', './img/result2.jpg')
+}
+function resultThird(){
+    explanation.innerHTML = "편리한 것도 좋지만, 조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러";
+    detail.innerHTML = "<br>"+"아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!";
+    backGround.style.filter = "opacity(0.6)";
+    document.getElementById('download').setAttribute('href', './img/result3.jpg')
+}
+function resultFourth(){
+    explanation.innerHTML = "당신은 일상 속에서 틈틈이 환경을 신경 쓰는군요." +"<br>"+"당신은 나무 지킴이하는 편이 좋겠어요";
+    detail.innerHTML = "<br>"+"일상 속에서 조금이나마 환경을 생각하려는 움직임이 보여요. 조금의 귀찮음만 극복하면 초록빛 지구를 함께 만들어갈 수 있을 것 같아요! 함께 해주실 거죠?";
+    backGround.style.filter = "opacity(0.4)";
+    document.getElementById('download').setAttribute('href', './img/result4.jpg')
+}
+function resultFifth(){
+    explanation.innerHTML = "잘 하고 있어요!" +"<br>"+"조금 더 노력한다면 지구를 지킬 수 있는 당신은 숲 지킴이!";
+    detail.innerHTML = "<br>"+"당신은 지구지킴이 이전 단계인 숲 지킴이 단계에 와 있어요. 숲을 지켜주는 당신 같은 존재가 있어 다행이네요. 조금 더 나아가면 지구 지킴이가 될 수 있겠어요!";
+    backGround.style.filter = "opacity(0.2)";
+    document.getElementById('download').setAttribute('href', './img/result5.jpg')
+}
+function resultSixth(){
+    explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!";
+    detail.innerHTML = "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?";
+    backGround.style.filter = "opacity(0.9)";
+    document.getElementById('download').setAttribute('href', './img/result.jpg')
+}
+
+
+
 
 function windowWidth() {
     if (window.innerWidth > 1366) {

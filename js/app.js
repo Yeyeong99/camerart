@@ -36,7 +36,7 @@ function removeAllChild(array) {
 //클릭 계산
 function clickCalculator() {
     if (click == 0) {
-        changeSection("아침에 일어난 당신!", "겨울이라" +"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.", "적당히 적정 온도로 맞춰놓자.", "귀찮으니까 대충 옷이나 입자.")
+        changeSection("아침에 일어난 당신!", "겨울이라"+"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워."+"<br>"+"25도 이상으로 올려야겠어.", "적당히 적정 온도로 맞춰놓자.", "귀찮으니까 대충 옷이나 입자.")
         body.style.backgroundColor = "#c2d6bf";
         compoFirst.style.backgroundImage = "url('./img/thermo.png')";
         compoFirst.style.backgroundSize = "cover";
@@ -61,7 +61,7 @@ function clickCalculator() {
         compoFourth.style.backgroundSize = "cover";
         click +=1;
     } else if (click ==2) {
-        changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 해결하죠?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
+        changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 할까요?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
         click +=1;
     }else if (click == 4) {
         changeSection("드디어 점심을 먹는 당신."+"<br>"+"심심해서 동영상을 볼까 해요.", "영상을 틀었는데.."+"<br>"+"저화질로 나오네요?", "최고화질 아니면.. 왜 봐?"+"<br>"+"무조건 최고화질로 본다", "그냥 틀어지는 대로 본다", "…귀찮다. 그냥 화면을 끈다.")
@@ -88,7 +88,7 @@ function clickCalculator() {
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 9) {
-        changeSection("휴- 하루가 다 갔네요."+"<br>"+"자기 전 스크린 타임을"+"<br>"+"확인 해 보아요.", "당신의 핸드폰 사용 시간은?", "6시간 이상", "3~6시간", "3시간 이하")
+        changeSection("휴- 하루가 다 갔네요."+"<br>"+"자기 전 스크린 타임을"+"<br>"+"확인 해 보아요.", "핸드폰 사용시간은?", "6시간 이상", "3~6시간", "3시간 이하")
         click +=1;
     } else if (click ==10) {
         removeAllChild(options);
@@ -97,7 +97,8 @@ function clickCalculator() {
         question.classList.add("hide");
         main.style.color = "white";
         footer.style.color = "white";
-        //appendChild
+        const furtherEx = document.createElement("span");
+        furtherEx.innerHTML = "sdfkjdsflkj;fds;jlkfsdalj;kfdas";
         if(score >= 36) {
             resultFirst();
         } else if (score >= 27) {

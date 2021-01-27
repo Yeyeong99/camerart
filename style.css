@@ -50,13 +50,16 @@ main {
   margin-left: 5%;
   margin-right: 5%;
   font-family: "MaruBuri-Regular";
+  text-align: center;
 }
+
 .options {
   width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "NanumSquare", sans-serif;
 }
 
 ol {
@@ -99,14 +102,17 @@ ol {
   width: 100%;
   height: 100%;
 }
-/*page 1*/
 
 .share-download {
   z-index: 1;
   display: flex;
   justify-content: center;
-  left: 50%;
-  bottom: 10%;
+  align-items: center;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.share-download > a {
+  margin: 10px;
 }
 #kakao-link-btn > img {
   border-radius: 50%;
@@ -117,4 +123,5 @@ ol {
 
 footer {
   z-index: 1;
+  font-family: "NanumSquare", sans-serif;
 }

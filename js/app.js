@@ -127,7 +127,6 @@ function clickCalculator() {
         changeSection("휴- 하루가 다 갔네요."+"<br>"+"자기 전 스크린 타임을"+"<br>"+"확인 해 보아요.", "당신의 핸드폰 사용 시간은?", "6시간 이상", "3~6시간", "3시간 이하")
         click +=1;
     } else if (click ==10) {
-        new App();
         removeAllChild(options);
         backGround.classList.remove("hide");
         detail.classList.remove("hide");

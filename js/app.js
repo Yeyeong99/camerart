@@ -43,7 +43,7 @@ function clickCalculator() {
         compoSecond.style.backgroundImage = "url('./img/hand.png')";
         compoSecond.style.backgroundSize = "cover";
         main.style.height = "50%";
-        main.style.bottom = "0";
+
         detail.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");

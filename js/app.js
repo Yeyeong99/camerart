@@ -37,42 +37,40 @@ function removeAllChild(array) {
 
 //결과
 function resultFirst(){
-    explanation.innerHTML = "우리 환경을 위한 작은 실천이라도 함께 해보아요. 당신은 플라스틱 헤비 러버"
+    explanation.innerHTML = "우리 환경을 위한 작은 실천이라도 함께 해보아요. 당신은 플라스틱 헤비 러버";
     detail.innerHTML = "당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요. 함께 합시다!";
     backGround.style.filter = "opacity(0.8)";
     document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
 function resultSecond(){
-    explanation.innerHTML = "환경을 생각해주세요! 당신은 플라스틱의 베스트 프렌드"
+    explanation.innerHTML = "환경을 생각해주세요! 당신은 플라스틱의 베스트 프렌드";
     detail.innerHTML = "이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.";
     backGround.style.filter = "opacity(0.7)";
     document.getElementById('download').setAttribute('href', './img/result2.jpg')
 }
 function resultThird(){
-    explanation.innerHTML = "편리한 것도 좋지만, 조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러"
+    explanation.innerHTML = "편리한 것도 좋지만, 조금 더 노력해볼까요?" +"<br>"+"당신은 플라스틱 소비러";
     detail.innerHTML = "아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!";
     backGround.style.filter = "opacity(0.6)";
     document.getElementById('download').setAttribute('href', './img/result3.jpg')
 }
 function resultFourth(){
-    explanation.innerHTML = "많이 노력당신은 일상 속에서 틈틈이 환경을 신경 쓰는군요." +"<br>"+"당신은 나무 지킴이하는 편이 좋겠어요"
+    explanation.innerHTML = "당신은 일상 속에서 틈틈이 환경을 신경 쓰는군요." +"<br>"+"당신은 나무 지킴이하는 편이 좋겠어요";
     detail.innerHTML = "일상 속에서 조금이나마 환경을 생각하려는 움직임이 보여요. 조금의 귀찮음만 극복하면 초록빛 지구를 함께 만들어갈 수 있을 것 같아요! 함께 해주실 거죠?";
     backGround.style.filter = "opacity(0.4)";
     document.getElementById('download').setAttribute('href', './img/result4.jpg')
 }
 function resultFifth(){
-    explanation.innerHTML = "잘 하고 있어요!" +"<br>"+"조금 더 노력한다면 지구를 지킬 수 있는 당신은 숲 지킴이!"
+    explanation.innerHTML = "잘 하고 있어요!" +"<br>"+"조금 더 노력한다면 지구를 지킬 수 있는 당신은 숲 지킴이!";
     detail.innerHTML = "당신은 지구지킴이 이전 단계인 숲 지킴이 단계에 와 있어요. 숲을 지켜주는 당신 같은 존재가 있어 다행이네요. 조금 더 나아가면 지구 지킴이가 될 수 있겠어요!";
     backGround.style.filter = "opacity(0.2)";
     document.getElementById('download').setAttribute('href', './img/result5.jpg')
 }
 function resultSixth(){
-    explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!"
+    explanation.innerHTML = "당신 덕분에 지구가 숨 쉬네요!" +"<br>"+"당신은 멋진 지구 지킴이!";
     detail.innerHTML = "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?";
-    explanation.innerHTML = "지구는 일회용이 아니에요";
-    question.innerHTML = "끝";
     backGround.style.filter = "opacity(0.9)";
-    document.getElementById('download').setAttribute('href', './img/result1.jpg')
+    document.getElementById('download').setAttribute('href', './img/result.jpg')
 }
 
 

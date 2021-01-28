@@ -46,13 +46,18 @@ main {
 }
 
 .question-container {
-  margin-top: 10%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 10% 5% 0 5%;
+  width: 90%;
   font-family: "MaruBuri-Regular";
   text-align: center;
+  overflow: hidden;
 }
 
+.explain {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
 .options {
   width: 90%;
   display: flex;
@@ -79,6 +84,24 @@ ol {
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0);
+}
+
+.background-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.background-slide > img {
+  width: 100%;
+  height: 100%;
 }
 
 .compo-one {
@@ -113,8 +136,14 @@ ol {
 
 .share-download > a {
   margin: 10px;
+  text-decoration: none;
+  color: rgb(233, 151, 151);
 }
-#kakao-link-btn > img {
+#kakao-link-btn {
+  width: 50px;
+  height: 50px;
+  background-image: url(./img/kakaolink_btn_medium.png);
+  background-size: cover;
   border-radius: 50%;
 }
 .hide {

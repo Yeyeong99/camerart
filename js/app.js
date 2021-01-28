@@ -4,17 +4,19 @@ const main = document.querySelector("main");
 const question = document.querySelector("h1");
 const explanation = document.querySelector("h2");
 const detail = document.querySelector("h3");
+const futherEx = document.querySelector("h4");
 const options = document.querySelector("div.options");
+const backCont = document.querySelector("div.background-slide");
+const backImg = document.querySelectorAll(".background-slide img");
 const shareBtn = document.querySelector(".share-download");
-const backGround = document.querySelector(".background");
+const backGround = document.querySelector(".last-result");
 const footer = document.querySelector("footer");
-const compoFirst = document.querySelector(".compo-one");
-const compoSecond = document.querySelector(".compo-two");
-const compoThird = document.querySelector(".compo-three");
-const compoFourth = document.querySelector(".compo-four");
+
+const size = backImg[0].clientWidth;
+
 let score = 0;
 let click = 0;
-
+let counter = 0;
 // 각 화면
 
 function changeSection(detail, quest, option1, option2, option3) {  
@@ -37,13 +39,7 @@ function removeAllChild(array) {
 function clickCalculator() {
     if (click == 0) {
         changeSection("아침에 일어난 당신!", "겨울이라"+"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워."+"<br>"+"25도 이상으로 올려야겠어.", "적당히 적정 온도로 맞춰놓자.", "귀찮으니까 대충 옷이나 입자.")
-        body.style.backgroundColor = "#c2d6bf";
-        compoFirst.style.backgroundImage = "url('./img/thermo.png')";
-        compoFirst.style.backgroundSize = "cover";
-        compoSecond.style.backgroundImage = "url('./img/hand.png')";
-        compoSecond.style.backgroundSize = "cover";
         main.style.height = "50%";
-
         detail.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
@@ -51,14 +47,6 @@ function clickCalculator() {
     } else if (click == 1) {
         changeSection("띵동- 택배가 왔어요!" +"<br>"+"집 앞에 쌓인" +"<br>"+"택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
         body.classList.remove("result-first");
-        body.style.backgroundImage = "url('./img/outside.png')";
-        body.style.backgroundSize = "cover";
-        compoFirst.style.backgroundImage = "url('./img/biggestbox.png')";
-        compoSecond.style.backgroundImage = "url('./img/secondbox.png')";
-        compoThird.style.backgroundImage = "url('./img/firstbox.png')";
-        compoThird.style.backgroundSize = "cover";
-        compoFourth.style.backgroundImage = "url('./img/smallbox.png')";
-        compoFourth.style.backgroundSize = "cover";
         click +=1;
     } else if (click ==2) {
         changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 할까요?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
@@ -68,13 +56,7 @@ function clickCalculator() {
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 5) {
-        changeSection("바깥 공기를 쐬고 싶어졌다." +"<br>"+"집 앞 카페에 왔어요.", "음료를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에 담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~")
-        body.style.backgroundImage = "url('./img/road.png')";
-        compoFirst.style.backgroundImage = "url('./img/road2.png')";
-        compoFirst.style.backgroundSize = "cover";
-        compoSecond.style.backgroundImage = "";
-        compoThird.style.backgroundImage = "";
-        compoFourth.style.backgroundImage= "";
+        changeSection("바깥 공기를 쐬고 싶어졌다." +"<br>"+"집 앞 카페에 왔어요.", "음료를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에 담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~") 
         click +=1;
     } else if (click == 6) {
         changeSection("집에 돌아왔네요.", "샤워를 하려고 해요.", "느긋하게 씻어야죠"+"<br>"+"(15분 초과)", "호다닥 씻을래요"+"<br>"+"(10분 내외)", "땀도 안흘렸는데…"+"<br>"+"양치랑 세수만")
@@ -97,8 +79,6 @@ function clickCalculator() {
         question.classList.add("hide");
         main.style.color = "white";
         footer.style.color = "white";
-        const furtherEx = document.createElement("span");
-        furtherEx.innerHTML = "sdfkjdsflkj;fds;jlkfsdalj;kfdas";
         if(score >= 36) {
             resultFirst();
         } else if (score >= 27) {
@@ -123,6 +103,7 @@ function clickCalculator() {
 function resultFirst(){
     explanation.innerHTML = "우리 환경을 위한"+"<br>"+"작은 실천이라도 함께 해보아요."+"<br>"+"당신은 플라스틱 헤비 러버";
     detail.innerHTML = "<br>"+"당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요. 함께 합시다!";
+    futherEx.innerHTML = "<br>"+"sdflj;ksdfalksdfaflsdjak;s"+"<br>"+"dlfjaksdfaljkfsalkdjsaklf;jdsa"+"<br>"+"klfdjsalk;fj;laskdjf;lksdajf;lk"+"<br>"+"sajf;kldsjafkljsa;lkfj;lskadjf"+"<br>"+"lksadjf;lkjakfl;jas;ldk"+"<br>"+"jf;lsakjflkdsjflk;sdjlkfjdsl;kafjdlksajfklasjfdl;ksajfklasj"+"<br>"+"fdkljaflkjslkfjslkdajfkldjsa"+"<br>"+"lkf;jld;ksajflksajflkdj"+"<br>"+"sa;lkfjdksl;ajfd;"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas"+"<br>"+"lksajf;lkdjas;lkfjls;kfjl;ksadj"+"<br>"+"fk;lasjfklasjfkdl;sajf;lkasjd;lfjas";
     backGround.style.filter = "opacity(0.8)";
     document.getElementById('download').setAttribute('href', './img/result1.jpg')
 }
@@ -174,6 +155,10 @@ window.addEventListener("load", windowWidth);
 //점수 계산 결과
 for (let i = 0; i < optionBtn.length; i++) {
     optionBtn[i].addEventListener("click", function (e) {
+        backCont.style.transition = "transform 0.4s ease-in-out";
+        counter++;
+        console.log(counter);
+        backCont.style.transform = 'translateX(' + (-size * counter) + 'px)';
         if(i==0){
             score +=4;
         }else if(i==1) {

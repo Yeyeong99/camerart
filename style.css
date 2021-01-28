@@ -99,31 +99,10 @@ ol {
   display: flex;
 }
 
-.background-slide > img {
+.background-slide > div.img {
   width: 100%;
   height: 100%;
-}
-
-.compo-one {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.compo-two {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.compo-three {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.compo-four {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
 }
 
 .share-download {

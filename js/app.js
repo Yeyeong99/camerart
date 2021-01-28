@@ -13,6 +13,7 @@ const backGround = document.querySelector(".last-result");
 const footer = document.querySelector("footer");
 
 const size = window.innerWidth;
+
 let score = 0;
 let click = 0;
 let counter = 0;
@@ -149,7 +150,10 @@ function windowWidth() {
     }
 }
 
-window.addEventListener("load", windowWidth);
+window.addEventListener("load", function () {
+    windowWidth
+    backImg[0].style.width = size +'px';
+});
 
 //점수 계산 결과
 for (let i = 0; i < optionBtn.length; i++) {

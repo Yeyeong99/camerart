@@ -12,7 +12,8 @@ const shareBtn = document.querySelector(".share-download");
 const backGround = document.querySelector(".last-result");
 const footer = document.querySelector("footer");
 
-const size = window.innerWidth;
+const size = backImg[0].clientWidth;
+
 let score = 0;
 let click = 0;
 let counter = 0;

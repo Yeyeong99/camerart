@@ -94,17 +94,13 @@ ol {
 }
 
 .background-slide {
-  width: 100%;
-  height: 100%;
   display: flex;
 }
 
-.background-slide > div.img {
+.background-slide > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
-
 .share-download {
   z-index: 1;
   display: flex;

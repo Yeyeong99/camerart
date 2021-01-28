@@ -150,10 +150,7 @@ function windowWidth() {
     }
 }
 
-window.addEventListener("load", function () {
-    windowWidth
-    backImg[0].style.width = size +'px';
-});
+window.addEventListener("load", windowWidth);
 
 //점수 계산 결과
 for (let i = 0; i < optionBtn.length; i++) {

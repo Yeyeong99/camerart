@@ -174,8 +174,7 @@ for (let i = 0; i < optionBtn.length; i++) {
         }else {
             if(e.target.innerHTML === "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.") {
                 changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "식도에 기름칠 좀 해볼까?"+"<br>"+"돈까스", "옵션2", "오늘은 산뜻하게!"+"<br>"+"볼 샐러드")
-                body.style.backgroundImage = "url('./img/salad.gif')";
-                body.style.backgroundSize = "cover";
+                document.getElementById('fourth').setAttribute('src', './img/salad.gif')
                 optionBtn[1].classList.add("hide");
             } else if (e.target.innerHTML === "마트에 가야지!"+"<br>"+"장을 보러간다. ") {
                 changeSection("장을 보기 위해 집을 나섰어요.", "마트까지", "부릉부릉~"+"<br>"+"자가를 이용한다.", "대중교통을 이용한다.", "산책도 하고 좋지 뭐!"+"<br>"+"도보를 이용한다.")

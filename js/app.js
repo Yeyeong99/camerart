@@ -53,6 +53,8 @@ function clickCalculator() {
         click +=1;
     }else if (click == 4) {
         changeSection("드디어 점심을 먹는 당신."+"<br>"+"심심해서 동영상을 볼까 해요.", "영상을 틀었는데.."+"<br>"+"저화질로 나오네요?", "최고화질 아니면.. 왜 봐?"+"<br>"+"무조건 최고화질로 본다", "그냥 틀어지는 대로 본다", "…귀찮다. 그냥 화면을 끈다.")
+        body.style.backgroundImage = "";
+        body.style.backgroundSize = "";
         optionBtn[1].classList.remove("hide");
         click +=1;
     } else if (click == 5) {
@@ -172,6 +174,8 @@ for (let i = 0; i < optionBtn.length; i++) {
         }else {
             if(e.target.innerHTML === "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.") {
                 changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "식도에 기름칠 좀 해볼까?"+"<br>"+"돈까스", "옵션2", "오늘은 산뜻하게!"+"<br>"+"볼 샐러드")
+                body.style.backgroundImage = "url('./img/salad.gif')";
+                body.style.backgroundSize = "cover";
                 optionBtn[1].classList.add("hide");
             } else if (e.target.innerHTML === "마트에 가야지!"+"<br>"+"장을 보러간다. ") {
                 changeSection("장을 보기 위해 집을 나섰어요.", "마트까지", "부릉부릉~"+"<br>"+"자가를 이용한다.", "대중교통을 이용한다.", "산책도 하고 좋지 뭐!"+"<br>"+"도보를 이용한다.")

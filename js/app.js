@@ -7,7 +7,7 @@ const detail = document.querySelector("h3");
 const futherEx = document.querySelector("h4");
 const options = document.querySelector("div.options");
 const backCont = document.querySelector("div.background-slide");
-const backImg = document.querySelectorAll(".background-slide img");
+const backImg = document.querySelectorAll(".background-img");
 const shareBtn = document.querySelector(".share-download");
 const backGround = document.querySelector(".last-result");
 const footer = document.querySelector("footer");
@@ -150,6 +150,10 @@ function windowWidth() {
         explanation.innerHTML = "";
         optionBtn[0].classList.add("hide");
     }
+    for (let i = 0; i < backImg.length; i++) {
+        backImg[i].style.width = size + 'px';
+        
+    }
 }
 
 window.addEventListener("load", windowWidth);
@@ -187,4 +191,5 @@ for (let i = 0; i < optionBtn.length; i++) {
         }
       })
 }
+
 

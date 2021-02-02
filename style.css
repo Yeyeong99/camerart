@@ -40,7 +40,7 @@ main {
   align-items: center;
 }
 
-h4 {
+h5 {
   line-height: 25px;
 }
 .container {
@@ -60,6 +60,10 @@ h4 {
   overflow: scroll;
   width: 100%;
   height: 100%;
+}
+iframe {
+  height: 100%;
+  width: 100%;
 }
 .options {
   width: 90%;
@@ -94,7 +98,7 @@ ol {
 }
 
 .background-slide {
-  width: 1200%;
+  width: 1300%;
   height: 100%;
   display: flex;
 }
@@ -138,6 +142,9 @@ ol {
 }
 #ten {
   background-image: url(./img/screentime.gif);
+}
+#eleven {
+  background-image: url(./img/basic.png);
 }
 #result {
   background-image: url(./img/basic.png);

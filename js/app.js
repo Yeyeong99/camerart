@@ -1,11 +1,12 @@
 const optionBtn = document.querySelectorAll("ol");
 const body = document.querySelector("body");
 const main = document.querySelector("main");
-const question = document.querySelector("h1");
-const explanation = document.querySelector("h2");
+const question = document.querySelector("h2");
+const explanation = document.querySelector("h3");
 const explainBox = document.querySelector("div.explain");
-const detail = document.querySelector("h3");
-const futherEx = document.querySelector("h4");
+const detail = document.querySelector("h4");
+const futherEx = document.querySelector("h5");
+const tumbPage = document.querySelector("iframe");
 const options = document.querySelector("div.options");
 const backCont = document.querySelector("div.background-slide");
 const backImg = document.querySelectorAll(".background-img");
@@ -28,6 +29,7 @@ function changeSection(detail, quest, option1, option2, option3) {
     optionBtn[2].innerHTML = option3;
 }
 
+
 //마지막 화면 
 function removeAllChild(array) {
     while(array.hasChildNodes())
@@ -44,39 +46,45 @@ function clickCalculator() {
         detail.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");
-        click +=1;
+        click += 1;
     } else if (click == 1) {
         changeSection("띵동- 택배가 왔어요!" +"<br>"+"집 앞에 쌓인" +"<br>"+"택배를 확인하는 당신.", "택배의 개수는?", "3개 이상", "1-2개", "0개")
         body.classList.remove("result-first");
-        click +=1;
+        click += 1;
     } else if (click ==2) {
         changeSection("꼬르륵- 어느덧 점심시간이네요.", "점심은 어떻게 할까요?", "한국인은 역시 배달이지…"+"<br>"+"시켜먹는다.", "마트에 가야지!"+"<br>"+"장을 보러간다. ", "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.")
-        click +=1;
+        click += 1;
     }else if (click == 4) {
         changeSection("드디어 점심을 먹는 당신."+"<br>"+"심심해서 동영상을 볼까 해요.", "영상을 틀었는데.."+"<br>"+"저화질로 나오네요?", "최고화질 아니면.. 왜 봐?"+"<br>"+"무조건 최고화질로 본다", "그냥 틀어지는 대로 본다", "…귀찮다. 그냥 화면을 끈다.")
         body.style.backgroundImage = "";
         body.style.backgroundSize = "";
         optionBtn[1].classList.remove("hide");
-        click +=1;
+        click += 1;
     } else if (click == 5) {
         changeSection("바깥 공기를 쐬고 싶어졌다." +"<br>"+"집 앞 카페에 왔어요.", "음료를 시켰는데..", "마시면서 집에 가야지!"+"<br>"+"일회용 테이크 아웃잔에 담아갈게요~", "카페에서 마시려고 했는데"+"<br>"+"일회용 컵밖에 못쓴다고 하네.."+"<br>"+"빨대랑 컵홀더는 안주셔도 돼요!", "텀블러를 챙겨왔다!"+"<br>"+"텀블러에 담아갈게요~") 
-        click +=1;
+        click += 1;
     } else if (click == 6) {
         changeSection("집에 돌아왔네요.", "샤워를 하려고 해요.", "느긋하게 씻어야죠"+"<br>"+"(15분 초과)", "호다닥 씻을래요"+"<br>"+"(10분 내외)", "땀도 안흘렸는데…"+"<br>"+"양치랑 세수만")
-        click +=1;
+        click += 1;
     } else if (click == 7) {
         changeSection("세탁기 앞에 선 당신.", "세탁기 물의 온도는?", "그냥 세탁기가 맞춰놓은 대로", "옵션2", "내가 설정해야지! 별도로 설정한다")
         optionBtn[1].classList.add("hide");
-        click +=1;
+        click += 1;
     } else if (click == 8) {
         changeSection("띠링- 새로운 메일이 왔네요!", "당신의 메일함은", "메일…그런 거.. 왜 읽어?"+"<br>"+"안 건드려서 미확인 메일이 999+", "메일이 쌓여있긴 하지만…"+"<br>"+"그래도 확인은 바로 함!"+"<br>"+"남은 메일 100개 정도."+"<br>"+"미확인 메일은 없다", "확인하고 바로 지우는 타입."+"<br>"+"메일함이 깨끗하다")
         optionBtn[1].classList.remove("hide");
-        click +=1;
+        click += 1;
     } else if (click == 9) {
         changeSection("휴- 하루가 다 갔네요."+"<br>"+"자기 전 스크린 타임을"+"<br>"+"확인 해 보아요.", "핸드폰 사용시간은?", "6시간 이상", "3~6시간", "3시간 이하")
-        click +=1;
-    } else if (click ==10) {
+        click += 1;
+    } else if (click == 10) {
+        changeSection("","","결과 보러가기","","");
+        tumbPage.classList.remove("hide");
+        main.style.height="100%";
+        click += 1;5
+    } else if (click == 11) {
         removeAllChild(options);
+        tumbPage.classList.add("hide");
         backGround.classList.remove("hide");
         detail.classList.remove("hide");
         main.style.height="60%";

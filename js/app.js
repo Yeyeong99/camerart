@@ -5,6 +5,8 @@ const question = document.querySelector("h2");
 const explanation = document.querySelector("h3");
 const explainBox = document.querySelector("div.explain");
 const detail = document.querySelector("h4");
+const button = document.querySelector("button");
+const tip = document.querySelector("div.tip");
 const futherEx = document.querySelector("h5");
 const tumbPage = document.querySelector("iframe");
 const options = document.querySelector("div.options");
@@ -38,6 +40,11 @@ function removeAllChild(array) {
     }
 }
 
+function addTips(){ 
+    button.innerHTML = "더보기";
+    tip.style.height = "50%";
+    tip.style.overFlow = "scroll";
+}
 //클릭 계산
 function clickCalculator() {
     if (click == 0) {
@@ -83,15 +90,17 @@ function clickCalculator() {
         main.style.height="100%";
         click += 1;5
     } else if (click == 11) {
+        button.classList.remove("hide");
         removeAllChild(options);
         tumbPage.classList.add("hide");
         backGround.classList.remove("hide");
         detail.classList.remove("hide");
-        main.style.height="60%";
-        explainBox.style.height="70%";
+        tip.classList.remove("hide");
+        main.style.height="80%";
         question.classList.add("hide");
         main.style.color = "white";
         footer.style.color = "white";
+        addTips();
         if(score >= 36) {
             resultFirst();
         } else if (score >= 27) {
@@ -209,3 +218,7 @@ for (let i = 0; i < optionBtn.length; i++) {
 }
 
 
+button.addEventListener("click", function() {
+    futherEx.classList.toggle("hide");
+    tip.style.overFlow="scroll";
+})

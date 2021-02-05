@@ -128,19 +128,19 @@ ol {
   background-image: url(./img/box.gif);
 }
 #three {
-  background-image: url(./img/basic.png);
+  background-image: url(./img/athome.gif);
 }
 #four {
   background-image: url(./img/basic.png);
 }
 #five {
-  background-image: url(./img/basic.png);
+  background-image: url(./img/video.gif);
 }
 #six {
   background-image: url(./img/road.gif);
 }
 #seven {
-  background-image: url(./img/basic.png);
+  background-image: url(./img/brushing.gif);
 }
 #eight {
   background-image: url(./img/washing.gif);
@@ -154,29 +154,28 @@ ol {
 #eleven {
   background-image: url(./img/basic.png);
 }
-#result {
-  background-image: url(./img/basic.png);
-}
 
 .share-download {
-  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  height: 100px;
+  align-items: center;
   font-family: "NanumSquare", sans-serif;
+  text-decoration: none;
 }
 
-.share-download > div > a,
-#download {
+.share-download > a {
   margin: 0 10px 0 0;
+  text-align: center;
   text-decoration: none;
-  color: rgb(233, 151, 151);
+  color: #ffffff;
+  line-height: 1.5rem;
 }
 
 span {
   line-height: 30px;
 }
+
 .other-result {
   height: 100%;
   margin-bottom: 10px;
@@ -188,9 +187,6 @@ span {
 }
 
 a#kakao-link-btn {
-  position: absolute;
-  right: 40px;
-  bottom: 0;
   width: 40px;
   height: 40px;
   background-image: url(./img/kakaolink_btn_medium.png);

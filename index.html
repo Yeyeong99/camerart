@@ -48,11 +48,15 @@
       <div class="background-img" id="result"></div>
     </div>
   </div>
-  <div class="share-download hide">
+  <div class="share-download">
       <a href="https://camerart7th.netlify.app/">다시하기</a>
       <a href="https://tumblbug.com/camerart7?ref=discover">전시 미리보기</a>
       <a href="./로고.jpg" id="download" download >결과 다운로드</a>
-      <a id="kakao-link-btn"  href="javascript:sendLink()"></a>
+      <a id="create-kakao-link-btn" href="javascript:;">
+        <img
+          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+        />
+      </a>
   </div>
   <footer>
       ⓒ 카메랄트 | <a href="https://www.instagram.com/camer.art/">home</a>
@@ -63,10 +67,10 @@
   <script type='text/javascript'>
       //<![CDATA[
         // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('1465378692b4919d6b53f9aaf650bde1');
+        Kakao.init('3cdcbba617d32e020aee263e0819d09e');
         // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
         Kakao.Link.createDefaultButton({
-          container: '#kakao-link-btn',
+          container: '#create-kakao-link-btn',
           objectType: 'feed',
           content: {
             title: '당신은 환경지킴이인가요?',
@@ -75,19 +79,18 @@
             link: {
               mobileWebUrl: 'https://camerart7th.netlify.app',
               webUrl: 'https://camerart7th.netlify.app'
-            }
+            },
           },
-          
           buttons: [
             {
               title: '테스트 하기',
               link: {
                 mobileWebUrl: 'https://camerart7th.netlify.app',
                 webUrl: 'https://camerart7th.netlify.app'
-              }
-            }
-          ]
-        });
+              },
+            },
+          ],
+        })
       //]]>
   </script>
 </body>

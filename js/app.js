@@ -172,12 +172,6 @@ function resultSixth(){
 
 
 function windowWidth() {
-    if (window.innerWidth > 1366) {
-        question.innerHTML = "모바일 환경으로 접속 부탁드립니다.";
-        detail.innerHTML ="";
-        explanation.innerHTML = "";
-        optionBtn[0].classList.add("hide");
-    }
     for (let i = 0; i < backImg.length; i++) {
         backImg[i].style.width = size + 'px';
         

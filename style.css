@@ -171,7 +171,7 @@ ol {
   text-align: center;
   text-decoration: none;
   color: #ffffff;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 span {
@@ -188,6 +188,13 @@ span {
   height: 100%;
 }
 
+a#create-kakao-link-btn {
+  width: 40px;
+  height: 40px;
+  background-image: url(./img/kakaolink_btn_medium.png);
+  background-size: cover;
+  border-radius: 50%;
+}
 .hide {
   display: none;
 }

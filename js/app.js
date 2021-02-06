@@ -50,7 +50,7 @@ function addTips(){
 function clickCalculator() {
     if (click == 0) {
         changeSection("아침에 일어난 당신!", "겨울이라"+"<br>"+"방이 조금 추워요.", "안 되겠다! 너무 추워."+"<br>"+"25도 이상으로 올려야겠어.", "적당히 적정 온도로 맞춰놓자.", "그냥 옷을 더 껴입는다.")
-        main.style.height = "40%";
+        main.style.justifyContent="flex-end";
         detail.classList.add("hide");
         optionBtn[1].classList.remove("hide");
         optionBtn[2].classList.remove("hide");

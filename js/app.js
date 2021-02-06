@@ -209,6 +209,7 @@ for (let i = 0; i < optionBtn.length; i++) {
                 changeSection("어떤 걸 시켜먹을까요?", "당신의 메뉴는?", "식도에 기름칠 좀 해볼까?"+"<br>"+"돈까스", "옵션2", "오늘은 산뜻하게!"+"<br>"+"볼 샐러드")
                 optionBtn[1].classList.add("hide");
             } else if (e.target.innerHTML === "마트에 가야지!"+"<br>"+"장을 보러간다. ") {
+                document.getElementById('four').style.backgroundImage="url('./img/back4-2.gif')"
                 changeSection("장을 보기 위해 집을 나섰어요.", "마트까지", "부릉부릉~"+"<br>"+"자가를 이용한다.", "대중교통을 이용한다.", "산책도 하고 좋지 뭐!"+"<br>"+"도보를 이용한다.")
             } else if (e.target.innerHTML === "집에 있는 재료로 요리 할 수 있지 않을까?"+"<br>"+"집에 있는 걸로 해먹는다.") {
                 document.getElementById('four').style.backgroundImage="url('./img/back4-3.gif')";

@@ -1,6 +1,6 @@
-const optionBtn = document.querySelectorAll("li");
 const body = document.querySelector("body");
 const main = document.querySelector("main");
+const optionBtn = document.querySelectorAll("ol");
 const question = document.querySelector("h2");
 const explanation = document.querySelector("h3");
 const explainBox = document.querySelector("section.explain");
@@ -9,7 +9,7 @@ const button = document.querySelector("button");
 const tip = document.querySelector("section.tip");
 const futherEx = document.querySelector("h5");
 const tumbPage = document.querySelector("iframe");
-const options = document.querySelector("ol.options");
+const options = document.querySelector("section.options");
 const backCont = document.querySelector("div.background-slide");
 const backImg = document.querySelectorAll(".background-img");
 const shareBtn = document.querySelector(".share-download");
@@ -22,76 +22,6 @@ let score = 0;
 let click = 0;
 let counter = 0;
 // 각 화면
-
-const questArray = [
-  {
-    detail: "아침에 일어난 당신!",
-    question: "겨울이라 방이 조금 추워요.",
-    firstOpt: "안 되겠다! 너무 추워. 25도 이상으로 올려야겠어.",
-    secondOpt: "적당히 적정 온도로 맞춰놓자.",
-    thirdOpt: "그냥 옷을 더 껴입는다.",
-  },
-  {
-    detail: "띵동- 택배가 왔어요!집 앞에 쌓인 택배를 확인하는 당신.",
-    question: "택배의 개수는?",
-    firstOpt: "3개 이상",
-    secondOpt: "1-2개",
-    thirdOpt: "0개",
-  },
-  {
-    detail: "꼬르륵- 어느덧 점심시간이네요.",
-    question: "점심은 어떻게 할까요?",
-    firstOpt: "한국인은 역시 배달이지… 시켜먹는다.",
-    secondOpt: "마트에 가야지! 장을 보러간다. ",
-    thirdOpt:
-      "집에 있는 재료로 요리 할 수 있지 않을까? 집에 있는 걸로 해먹는다.",
-  },
-  {
-    detail:
-      "드디어 점심을 먹는 당신." + "<br>" + "심심해서 동영상을 볼까 해요.",
-    question: "영상을 틀었는데.." + "<br>" + "저화질로 나오네요?",
-    firstOpt: "최고화질 아니면.. 왜 봐?" + "<br>" + "무조건 최고화질로 본다",
-    secondOpt: "그냥 틀어지는 대로 본다",
-    thirdOpt: "안볼래. 그냥 화면을 끈다.",
-  },
-  {
-    detail: "바깥 공기를 쐬고 싶어졌다." + "<br>" + "집 앞 카페에 왔어요.",
-    question: "음료를 시켰는데..",
-    firstOpt:
-      "마시면서 집에 가야지!" + "<br>" + "일회용 테이크 아웃잔에 담아갈게요~",
-    secondOpt: "카페에서 일회용 컵으로.. 하지만 빨대랑 컵홀더는 안주셔도 돼요!",
-    thirdOpt: "챙겨온 텀블러에 담아갈게요~",
-  },
-  {
-    detail: "세탁기 앞에 선 당신.",
-    question: "세탁기 물의 온도는?",
-    firstOpt: "그냥 세탁기가 맞춰놓은 대로",
-    secondOpt: "",
-    thirdOpt: "내가 설정해야지! 별도로 낮춘다",
-  },
-  {
-    detail: "띠링- 새로운 메일이 왔네요!",
-    question: "당신의 메일함은",
-    firstOpt: "메일…그런 거.. 왜 읽어? 안 건드려서 미확인 메일이 999+",
-    secondOpt: "남은 메일 100개 정도." + "<br>" + "미확인 메일은 없다",
-    thirdOpt: "확인하고 바로 지우는 타입." + "<br>" + "메일함이 깨끗하다",
-  },
-
-  {
-    detail: "집에 돌아왔네요.",
-    question: "샤워를 하려고 해요.",
-    firstOpt: "느긋하게 씻어야죠 (15분 초과)",
-    secondOpt: "호다닥 씻을래요" + "<br>" + "(10분 내외)",
-    thirdOpt: "땀도 안흘렸는데…" + "<br>" + "양치랑 세수만",
-  },
-  {
-    detail: "휴- 하루가 다 갔네요.  자기 전 스크린 타임을확인 해 보아요.",
-    question: "핸드폰 사용시간은?",
-    firstOpt: "6시간 이상",
-    secondOpt: "3~6시간",
-    thirdOpt: "3시간 이하",
-  },
-];
 
 function changeSection(detail, quest, option1, option2, option3) {
   explanation.innerHTML = detail;
@@ -117,41 +47,107 @@ function addTips() {
 //클릭 계산
 function clickCalculator() {
   if (click == 0) {
-    changeSection();
+    changeSection(
+      "아침에 일어난 당신!",
+      "겨울이라" + "<br>" + "방이 조금 추워요.",
+      "안 되겠다! 너무 추워." + "<br>" + "25도 이상으로 올려야겠어.",
+      "적당히 적정 온도로 맞춰놓자.",
+      "그냥 옷을 더 껴입는다."
+    );
     main.style.justifyContent = "flex-end";
     detail.classList.add("hide");
     optionBtn[1].classList.remove("hide");
     optionBtn[2].classList.remove("hide");
     click += 1;
   } else if (click == 1) {
-    changeSection();
+    changeSection(
+      "띵동- 택배가 왔어요!" +
+        "<br>" +
+        "집 앞에 쌓인" +
+        "<br>" +
+        "택배를 확인하는 당신.",
+      "택배의 개수는?",
+      "3개 이상",
+      "1-2개",
+      "0개"
+    );
     body.classList.remove("result-first");
     click += 1;
   } else if (click == 2) {
-    changeSection();
+    changeSection(
+      "꼬르륵- 어느덧 점심시간이네요.",
+      "점심은 어떻게 할까요?",
+      "한국인은 역시 배달이지…" + "<br>" + "시켜먹는다.",
+      "마트에 가야지!" + "<br>" + "장을 보러간다. ",
+      "집에 있는 재료로 요리 할 수 있지 않을까?" +
+        "<br>" +
+        "집에 있는 걸로 해먹는다."
+    );
     click += 1;
   } else if (click == 4) {
-    changeSection();
+    changeSection(
+      "드디어 점심을 먹는 당신." + "<br>" + "심심해서 동영상을 볼까 해요.",
+      "영상을 틀었는데.." + "<br>" + "저화질로 나오네요?",
+      "최고화질 아니면.. 왜 봐?" + "<br>" + "무조건 최고화질로 본다",
+      "그냥 틀어지는 대로 본다",
+      "안볼래. 그냥 화면을 끈다."
+    );
     body.style.backgroundImage = "";
     body.style.backgroundSize = "";
     optionBtn[1].classList.remove("hide");
     click += 1;
   } else if (click == 5) {
-    changeSection();
+    changeSection(
+      "바깥 공기를 쐬고 싶어졌다." + "<br>" + "집 앞 카페에 왔어요.",
+      "음료를 시켰는데..",
+      "마시면서 집에 가야지!" + "<br>" + "일회용 테이크 아웃잔에 담아갈게요~",
+      "카페에서 일회용 컵으로.." +
+        "<br>" +
+        "하지만 빨대랑 컵홀더는 안주셔도 돼요!",
+      "챙겨온 텀블러에 담아갈게요~"
+    );
     click += 1;
   } else if (click == 6) {
-    changeSection();
+    changeSection(
+      "집에 돌아왔네요.",
+      "샤워를 하려고 해요.",
+      "느긋하게 씻어야죠" + "<br>" + "(15분 초과)",
+      "호다닥 씻을래요" + "<br>" + "(10분 내외)",
+      "땀도 안흘렸는데…" + "<br>" + "양치랑 세수만"
+    );
     click += 1;
   } else if (click == 7) {
-    changeSection();
+    changeSection(
+      "세탁기 앞에 선 당신.",
+      "세탁기 물의 온도는?",
+      "그냥 세탁기가 맞춰놓은 대로",
+      "옵션2",
+      "내가 설정해야지! 별도로 낮춘다"
+    );
     optionBtn[1].classList.add("hide");
     click += 1;
   } else if (click == 8) {
-    changeSection();
+    changeSection(
+      "띠링- 새로운 메일이 왔네요!",
+      "당신의 메일함은",
+      "메일…그런 거.. 왜 읽어?" + "<br>" + "안 건드려서 미확인 메일이 999+",
+      "남은 메일 100개 정도." + "<br>" + "미확인 메일은 없다",
+      "확인하고 바로 지우는 타입." + "<br>" + "메일함이 깨끗하다"
+    );
     optionBtn[1].classList.remove("hide");
     click += 1;
   } else if (click == 9) {
-    changeSection();
+    changeSection(
+      "휴- 하루가 다 갔네요." +
+        "<br>" +
+        "자기 전 스크린 타임을" +
+        "<br>" +
+        "확인 해 보아요.",
+      "핸드폰 사용시간은?",
+      "6시간 이상",
+      "3~6시간",
+      "3시간 이하"
+    );
     click += 1;
   } else if (click == 10) {
     changeSection("카메랄트 후원 진행 중", "", "결과 보러가기", "", "");

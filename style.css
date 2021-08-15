@@ -84,12 +84,14 @@ iframe {
   font-family: "NanumSquare", sans-serif;
 }
 
-ol {
+li {
+  list-style: none;
   background-color: white;
   margin: 10px 0px 0px;
   padding: 10px;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 /*BACKGROUND*/

@@ -58,7 +58,8 @@ main {
 }
 
 .tip {
-  height: 100%;
+  width: 70%;
+  height: 50%;
   overflow: scroll;
 }
 button {

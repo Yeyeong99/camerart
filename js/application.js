@@ -4,6 +4,8 @@ const optionBox = document.querySelector("ol");
 const optionBtn = document.querySelectorAll("li");
 const question = document.querySelector("h2");
 const explanation = document.querySelector("h3");
+const furtherEx = document.querySelector("h5");
+
 const explainBox = document.querySelector("section.explain");
 const notice = document.querySelector("h4");
 const button = document.querySelector("button");
@@ -180,7 +182,10 @@ const nicknameArray = [
 ];
 
 const resultArray = [
-  {},
+  {
+    id: 0,
+    exp: "",
+  },
   {
     id: 1,
     exp: "띵동! 택배 왔어요~ 세상에서 제일 설레는 소리는? 바로 택배 아저씨 목소리! 코로나 19로 집에 있는 시간이 많아진 요즘 온라인 쇼핑에 푸~욱 빠져있진 않나요? 클릭 몇 번만 하면 내 앞으로 물건을 갔다 주니 얼마나 편한지 몰라요. 게다가 속도는 로켓🚀처럼 빠르니 좋아하지 않을 수가 없네요. 그런데 여러분! 이토록 좋은 점만 가득해 보이는 택배가 사실은 환경오염의 주범이라는 거 알고 계셨나요? 생활폐기물 중 무려 40%가 포장 폐기물이라고 해요. 정말 어마어마하지 않나요? 심지어 포장 폐기물의 대부분은 불필요하게 발생하는 경우가 많은데요. 제품 손상 방지를 위한 쇼핑업체의 과대포장이 그 원인이라고 해요. 이 문제를 해결하려면 어떤 실천을 할 수 있을까요? 먼저 제대로 된 분리수거를 하는 것인데요. 테이프와 송장이 붙어있는 상자는 분리수거가 되지 않아요. 제대로 된 분리수거를 위해선 종이류가 아닌 비닐 테이프와 송장은 꼭 제거해주세요! 또 다른 방법으로는 친환경 포장재를 사용하는 쇼핑업체의 제품을 구매하는 겁니다. 재사용이 가능한 보냉백 ‘알비백’을 도입한 SSG닷컴의 경우 도입 이후 두 달 간 일회용 포장 용품 80만 개 이상을 절감했으며, 모든 포장재를 재활용이 가능한 소재(종이)로 바꾼 마켓컬리의 경우 1년 동안 플라스틱 4,831t을 절감했습니다. 온라인 쇼핑의 장점도 누리면서 환경도 보호할 수 있다니 정말 굿이네요! 굿굿굿~ 마지막 방법은 가장 확실히 포장 폐기물을 줄일 수 있는데요. 바로 불필요한 온라인 쇼핑 줄이기! 입니다. 시중에서 쉽게 구매할 수 있는 물품은 오프라인으로 구매하여 포장 폐기물의 발생을 방지하는 겁니다. 온라인 쇼핑보다는 귀찮겠지만 가장 확실한 방법이니 많은 분이 동참해주셨으면 좋겠네요!",
@@ -242,18 +247,26 @@ function showResult(answerArray, quest, result) {
 
   for (let i = 0; i < answerArray.length; i++) {
     if (i !== 6 && i !== 10 && i !== 11 && i !== 12) {
-      if (answerArray.includes(quest[i].firstOpt)) {
+      if (
+        answerArray.includes(quest[i].firstOpt) ||
+        answerArray.includes(quest[i].secondOpt)
+      ) {
         answerShow.push(result[i].exp);
-        answerShow.push(i);
       }
     } else {
       if (answerArray.includes(quest[6 || 10 || 11 || 12].firstOpt)) {
+        if (answerShow.includes(result[6].exp)) {
+          continue;
+        }
         answerShow.push(result[6].exp);
       }
     }
-
-    return answerShow;
   }
+
+  if (answerShow.length === 0) {
+    answerShow.push(result[Math.floor(Math.random() * result)]);
+  }
+  return answerShow.join("<br><br>");
 }
 
 function updateScreen() {
@@ -278,14 +291,14 @@ function updateScreen() {
     changeSection(questArray[7]);
     click++;
   } else if (click === 6) {
-    optionBtn[1].classList.add("hide");
     changeSection(questArray[8]);
     click++;
   } else if (click === 7) {
-    optionBtn[1].classList.remove("hide");
+    optionBtn[1].classList.add("hide");
     changeSection(questArray[9]);
     click++;
   } else if (click === 8) {
+    optionBtn[1].classList.remove("hide");
     changeSection(questArray[10]);
     click++;
   } else if (click === 9) {
@@ -300,9 +313,8 @@ function updateScreen() {
     while (optionBox.hasChildNodes()) {
       optionBox.removeChild(optionBox.firstChild);
     }
-    const furtherEx = document.createElement("h5");
-    explainBox.appendChild(furtherEx);
-    console.log(showResult(answer, questArray, resultArray));
+    tip.classList.remove("hide");
+    furtherEx.classList.remove("hide");
     furtherEx.innerHTML = showResult(answer, questArray, resultArray);
     if (count > 36) {
       nicknameSection(nicknameArray[0]);

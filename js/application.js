@@ -5,7 +5,7 @@ const optionBtn = document.querySelectorAll("li");
 const question = document.querySelector("h2");
 const explanation = document.querySelector("h3");
 const explainBox = document.querySelector("section.explain");
-const detail = document.querySelector("h4");
+const notice = document.querySelector("h4");
 const button = document.querySelector("button");
 const tip = document.querySelector("section.tip");
 const futherEx = document.querySelector("h5");
@@ -19,6 +19,7 @@ const footer = document.querySelector("footer");
 
 let click = 0;
 let score = 0;
+let count = 0;
 
 const questArray = [
   {
@@ -132,6 +133,54 @@ const questArray = [
   },
 ];
 
+const resultArray = [
+  {
+    detail:
+      "우리 환경을 위한" +
+      "<br>" +
+      "작은 실천이라도 함께 해보아요." +
+      "<br>" +
+      "당신은 플라스틱 헤비 러버",
+    note:
+      "당신은 플라스틱을 지독히 사랑하는 사람이군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 우리가 살아가는 지구, 우리가 더 보살펴야 하지 않을까요? 오늘부터 플라스틱 말고, 지구를 사랑해보아요." +
+      "함께 합시다!",
+  },
+  {
+    detail: "환경을 생각해주세요!" + "<br>" + "당신은 플라스틱 베스트 프렌드",
+    note: "이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.",
+  },
+  {
+    detail:
+      "편리한 것도 좋지만," +
+      "<br>" +
+      "조금 더 노력해볼까요?" +
+      "<br>" +
+      "당신은 플라스틱 소비러",
+    note: "아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!",
+  },
+  {
+    detail:
+      "당신은 일상 속에서 틈틈이" +
+      "<br>" +
+      "환경을 신경 쓰는군요." +
+      "<br>" +
+      "당신은 나무 지킴이!",
+    note: "일상 속에서 조금이나마 환경을 생각하려는 움직임이 보여요. 조금의 귀찮음만 극복하면 초록빛 지구를 함께 만들어갈 수 있을 것 같아요! 함께 해주실 거죠?",
+  },
+  {
+    detail:
+      "잘 하고 있어요!" +
+      "<br>" +
+      "조금 더 노력한다면 지구를 지킬 수 있는 당신은 숲 지킴이!",
+    note: "당신은 지구지킴이 이전 단계인 숲 지킴이 단계에 와 있어요. 숲을 지켜주는 당신 같은 존재가 있어 다행이네요. 조금 더 나아가면 지구 지킴이가 될 수 있겠어요!",
+  },
+  {
+    detail:
+      "당신 덕분에 지구가 숨 쉬네요!" + "<br>" + "당신은 멋진 지구 지킴이!",
+    note: "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?",
+  },
+];
+
 function changeSection(object) {
   const { detail, quest, firstOpt, secondOpt, thirdOpt } = object;
   explanation.innerHTML = detail;
@@ -141,13 +190,19 @@ function changeSection(object) {
   optionBtn[2].innerHTML = thirdOpt;
 }
 
+function resultSection(object) {
+  const { detail, note } = object;
+  explanation.innerHTML = detail;
+  notice.innerHTML = "<br>" + note;
+}
+
 function updateScreen() {
   if (click === 0) {
     changeSection(questArray[0]);
     optionBtn.forEach((opt) => {
       opt.classList.remove("hide");
     });
-    detail.classList.add("hide");
+    notice.classList.add("hide");
     click++;
     console.log(click);
   } else if (click === 1) {
@@ -191,14 +246,35 @@ function updateScreen() {
     click++;
     console.log(click);
   } else if (click === 11) {
-    changeSection(questArray[12]);
-    click++;
-    console.log(click);
+    notice.classList.remove("hide");
+    while (optionBox.hasChildNodes()) {
+      optionBox.removeChild(optionBox.firstChild);
+    }
+    if (count > 36) {
+      resultSection(resultArray[0]);
+    } else if (count > 27) {
+      resultSection(resultArray[1]);
+    } else if (count > 21) {
+      resultSection(resultArray[2]);
+    } else if (count > 16) {
+      resultSection(resultArray[3]);
+    } else if (count > 12) {
+      resultSection(resultArray[4]);
+    } else {
+      resultSection(resultArray[5]);
+    }
   }
 }
 
 optionBtn.forEach((opt) => {
   opt.addEventListener("click", function (e) {
+    if (e.target === optionBtn[0]) {
+      count += 4;
+    } else if (e.target === optionBtn[1]) {
+      count += 2;
+    } else {
+      count += 0;
+    }
     if (click !== 3) {
       updateScreen();
     } else {

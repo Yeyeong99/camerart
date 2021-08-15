@@ -1,94 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
+    />
 
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <title>Camerart</title>
-</head>
-<body>
-  <main>
+  </head>
+  <body>
+    <main>
       <section class="question-container">
         <h3>당신의 하루는 어떤가요?</h3>
-        <h2>당신의 일상 속<br>크고 작은 영향력을<br>알아보아요.</h2>
+        <h2>당신의 일상 속<br />크고 작은 영향력을<br />알아보아요.</h2>
         <section class="explain">
-          <h4><br>결과 다운로드를 위해 크롬 또는 네이버에서<br>실행할 것을 권장합니다.<br><br>화면 로딩이 느릴 수 있으니<br>천천히 기다려주세요!</h4>
+          <h4>
+            <br />결과 다운로드를 위해 크롬 또는 네이버에서<br />실행할 것을
+            권장합니다.<br /><br />화면 로딩이 느릴 수 있으니<br />천천히
+            기다려주세요!
+          </h4>
         </section>
-        <button class="hide"></button>
-        <section class="tip hide">
-          <h5 class="hide"></h5>
-        </section>
+        <button class="hide">더보기</button>
       </section>
-      <iframe class="hide" src="https://tumblbug.com/camerart7" frameborder="0"></iframe>
+      <iframe
+        class="hide"
+        src="https://tumblbug.com/camerart7"
+        frameborder="0"
+      ></iframe>
       <ol class="options">
         <li class="first-option">시작</li>
         <li class="second-option hide">선택지 2</li>
         <li class="third-option hide">선택지 3</li>
-      </ㅐ>  
-  </main>
-  <div class="background-container">
-    <div class="background-slide">
-      <div class="background-img" id="intro"></div>
-      <div class="background-img" id="one"></div>
-      <div class="background-img" id="two"></div>
-      <div class="background-img" id="three"></div>
-      <div class="background-img" id="four"></div>
-      <div class="background-img" id="five"></div>
-      <div class="background-img" id="six"></div>
-      <div class="background-img" id="seven"></div>
-      <div class="background-img" id="eight"></div>
-      <div class="background-img" id="nine"></div>
-      <div class="background-img" id="ten"></div>
-      <div class="background-img" id="eleven"></div>
-      <div class="background-img" id="result"></div>
+      </ol>
+      <section class="tip hide">
+        <h5 class="hide"></h5>
+      </section>
+    </main>
+    <div class="background-container">
+      <div class="background-slide">
+        <div class="background-img" id="intro"></div>
+        <div class="background-img" id="one"></div>
+        <div class="background-img" id="two"></div>
+        <div class="background-img" id="three"></div>
+        <div class="background-img" id="four"></div>
+        <div class="background-img" id="five"></div>
+        <div class="background-img" id="six"></div>
+        <div class="background-img" id="seven"></div>
+        <div class="background-img" id="eight"></div>
+        <div class="background-img" id="nine"></div>
+        <div class="background-img" id="ten"></div>
+        <div class="background-img" id="eleven"></div>
+        <div class="background-img" id="result"></div>
+      </div>
     </div>
-  </div>
-  <div class="share-download hide">
+    <div class="share-download hide">
       <a href="https://camerart7th.netlify.app/">다시하기</a>
       <a href="https://tumblbug.com/camerart7?ref=discover">전시 미리보기</a>
-      <a href="./로고.jpg" id="download" download >결과 다운로드</a>
-      <a id="create-kakao-link-btn" href="javascript:;">
-      </a>
-  </div>
-  <footer>
+      <a href="./로고.jpg" id="download" download>결과 다운로드</a>
+      <a id="create-kakao-link-btn" href="javascript:;"> </a>
+    </div>
+    <footer>
       ⓒ 카메랄트 | <a href="https://www.instagram.com/camer.art/">home</a>
-  </footer>
-  <div class="last-result hide">
-  </div>
-  <script type="module" src="./js/application.js"></script>
-  <script type='text/javascript'>
+    </footer>
+    <div class="last-result hide"></div>
+    <script type="module" src="./js/application.js"></script>
+    <script type="text/javascript">
       //<![CDATA[
-        // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('3cdcbba617d32e020aee263e0819d09e');
-        // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-        Kakao.Link.createDefaultButton({
-          container: '#create-kakao-link-btn',
-          objectType: 'feed',
-          content: {
-            title: '당신의 하루는 어떤가요?',
-            description: '#환경 #카메랄트 #7번째전시',
-            imageUrl: 'https://ifh.cc/g/yroQQz.jpg',
+      // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init("3cdcbba617d32e020aee263e0819d09e");
+      // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+      Kakao.Link.createDefaultButton({
+        container: "#create-kakao-link-btn",
+        objectType: "feed",
+        content: {
+          title: "당신의 하루는 어떤가요?",
+          description: "#환경 #카메랄트 #7번째전시",
+          imageUrl: "https://ifh.cc/g/yroQQz.jpg",
+          link: {
+            mobileWebUrl: "https://camerart7th.netlify.app",
+            webUrl: "https://camerart7th.netlify.app",
+          },
+        },
+        buttons: [
+          {
+            title: "테스트 하기",
             link: {
-              mobileWebUrl: 'https://camerart7th.netlify.app',
-              webUrl: 'https://camerart7th.netlify.app'
+              mobileWebUrl: "https://camerart7th.netlify.app",
+              webUrl: "https://camerart7th.netlify.app",
             },
           },
-          buttons: [
-            {
-              title: '테스트 하기',
-              link: {
-                mobileWebUrl: 'https://camerart7th.netlify.app',
-                webUrl: 'https://camerart7th.netlify.app'
-              },
-            },
-          ],
-        })
+        ],
+      });
       //]]>
-  </script>
-</body>
+    </script>
+  </body>
 </html>

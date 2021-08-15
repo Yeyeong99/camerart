@@ -271,10 +271,11 @@ function showResult(answerArray, quest, result) {
 
 function updateScreen() {
   if (click === 0) {
-    changeSection(questArray[0]);
+    main.style.justifyContent = "flex-end";
     optionBtn.forEach((opt) => {
       opt.classList.remove("hide");
     });
+    changeSection(questArray[0]);
     notice.classList.add("hide");
     click++;
   } else if (click === 1) {
@@ -306,15 +307,23 @@ function updateScreen() {
     click++;
   } else if (click === 10) {
     changeSection(questArray[12]);
+    tumbPage.classList.remove("hide");
+    tip.classList.add("hide");
+    main.style.height = "100%";
+    optionBtn[1].classList.add("hide");
+    optionBtn[2].classList.add("hide");
     click++;
   } else if (click === 11) {
     notice.classList.remove("hide");
-    console.log(answer);
     while (optionBox.hasChildNodes()) {
       optionBox.removeChild(optionBox.firstChild);
     }
+    button.classList.remove("hide");
+    tumbPage.classList.add("hide");
     tip.classList.remove("hide");
     furtherEx.classList.remove("hide");
+    tip.classList.add("hidden");
+    furtherEx.classList.add("hidden");
     furtherEx.innerHTML = showResult(answer, questArray, resultArray);
     if (count > 36) {
       nicknameSection(nicknameArray[0]);
@@ -362,4 +371,9 @@ optionBtn.forEach((opt) => {
       click++;
     }
   });
+});
+
+button.addEventListener("click", function () {
+  furtherEx.classList.toggle("hidden");
+  tip.classList.toggle("hidden");
 });

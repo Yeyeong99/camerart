@@ -59,7 +59,7 @@ main {
 
 .tip {
   width: 70%;
-  height: 50%;
+  height: 40%;
   overflow: scroll;
 }
 button {
@@ -88,7 +88,7 @@ iframe {
 li {
   list-style: none;
   background-color: white;
-  margin: 10px 0px 0px;
+  margin: 15px 0px 0px 0px;
   padding: 10px;
   width: 100%;
   text-align: center;
@@ -200,6 +200,9 @@ a#create-kakao-link-btn {
 }
 .hide {
   display: none;
+}
+.hidden {
+  visibility: hidden;
 }
 
 footer {

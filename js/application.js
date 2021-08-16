@@ -4,12 +4,10 @@ const optionBox = document.querySelector("ol");
 const optionBtn = document.querySelectorAll("li");
 const question = document.querySelector("h2");
 const explanation = document.querySelector("h3");
-const furtherEx = document.querySelector("h5");
 
 const explainBox = document.querySelector("section.explain");
 const notice = document.querySelector("h4");
 const button = document.querySelector("button");
-const tip = document.querySelector("section.tip");
 const tumbPage = document.querySelector("iframe");
 const options = document.querySelector("section.options");
 const backCont = document.querySelector("div.background-slide");
@@ -18,9 +16,11 @@ const shareBtn = document.querySelector(".share-download");
 const backGround = document.querySelector("#result");
 const footer = document.querySelector("footer");
 
+const size = window.innerWidth;
+
 let click = 0;
 let score = 0;
-let count = 0;
+let counter = 0;
 
 const questArray = [
   {
@@ -135,6 +135,7 @@ const questArray = [
 
 const nicknameArray = [
   {
+    id: 1,
     detail:
       "우리 환경을 위한" +
       "<br>" +
@@ -146,10 +147,12 @@ const nicknameArray = [
       "함께 합시다!",
   },
   {
+    id: 2,
     detail: "환경을 생각해주세요!" + "<br>" + "당신은 플라스틱 베스트 프렌드",
     note: "이런 이런, 지구가 울고 있어요! 당신은 플라스틱과 누구보다 끈끈한 우정을 자랑하고 있군요. 아래의 환경 보호 tip을 함께 정독하고, 작은 것부터 실천해 나가요. 당신의 작은 실천들이 모여 더 나은 환경을 만들 수 있답니다.",
   },
   {
+    id: 3,
     detail:
       "편리한 것도 좋지만," +
       "<br>" +
@@ -159,6 +162,7 @@ const nicknameArray = [
     note: "아직은 환경보단 일상 속 편리함이 더 좋으시군요! 그래도 괜찮아요. 저는 당신 속에서 가능성을 보았답니다. 아래의 환경 보호 tip을 함께 정독하고, 실천하다 보면 플라스틱 소비를 줄이고, 친환경적인 라이프 스타일을 가질 수 있을 거에요!",
   },
   {
+    id: 4,
     detail:
       "당신은 일상 속에서 틈틈이" +
       "<br>" +
@@ -168,6 +172,7 @@ const nicknameArray = [
     note: "일상 속에서 조금이나마 환경을 생각하려는 움직임이 보여요. 조금의 귀찮음만 극복하면 초록빛 지구를 함께 만들어갈 수 있을 것 같아요! 함께 해주실 거죠?",
   },
   {
+    id: 5,
     detail:
       "잘 하고 있어요!" +
       "<br>" +
@@ -175,6 +180,7 @@ const nicknameArray = [
     note: "당신은 지구지킴이 이전 단계인 숲 지킴이 단계에 와 있어요. 숲을 지켜주는 당신 같은 존재가 있어 다행이네요. 조금 더 나아가면 지구 지킴이가 될 수 있겠어요!",
   },
   {
+    id: 6,
     detail:
       "당신 덕분에 지구가 숨 쉬네요!" + "<br>" + "당신은 멋진 지구 지킴이!",
     note: "당신은 일상 속에서도 환경을 지키기 위한 노력을 꾸준히 하고 계시는 군요. 당신과 같이 환경을 생각하는 사람이 많아진다면, 더 살기 좋은 지구가 되지 않을까요?",
@@ -222,11 +228,9 @@ const resultArray = [
     id: 9,
     exp: "이제 더러워진 옷을 빨 차례에요. 세제를 넣고 세탁기 동작 버튼을 누르는 당신! 뭐가 하나 빠진 것 같아요. 왜 물 온도는 설정하지 않는 거죠? 당신은 냉수 세탁이 에너지 절약에 도움이 된다는 거 알고 계시나요? 가정에서 많이 쓰이는 드럼세탁기의 경우 기본적으로 온도가 40도로 설정되어 있는데요. 이를 그대로 두고 세탁한 경우와 온도를 내리고 세탁한 경우 세탁력은 유사하지만, 에너지 소비에 있어선 많은 차이가 있다고 해요. 온수 세탁이 냉수 세탁보다 연간 28배 더 많은 전력을 소비하거든요. 그러니 우리 설정온도를 낮추고 냉수 세탁 하는 건 어때요? 전력 사용을 줄어 환경도 보호하고 돈도 절약할 수 있으니 이야말로 누이 좋고 매부 좋은 일 아닌가요?",
   },
-  {
-    id: 10,
-    exp: "당신이 유튜브 영상을 시청하는 것, 메일을 지우지 않고 쌓아두는 것, 핸드폰을 사용하는 것 모두 환경에 악영향을 미친다는 거 알고 계시나요? 온라인 및 모바일에서 발생하는 모든 일에는 데이터가 사용돼요. 그렇기에 모든 IT 기업은 데이터를 저장하고 전송하기 위한 데이터 센터를 운영하고 있죠. 그린피스에 의하면 2020년 세계 데이터 센터 에너지 사용량은 1조 9,370억 kWh라고 해요. 이는 우리나라 1년 전기 사용량의 4배에 달하는 양이기도 하죠. 사실 데이터를 저장하고 전송하는 것에도 전력이 소비되지만, 이보다 더 많은 전력이 냉각장치를 가동하는데 쓰인답니다. 데이터 센터는 24시간 365일 쉴 틈 없이 많은 양의 데이터를 취급하기에 엄청난 열을 내뿜는데요. 이를 식히기 위해선 냉각장치가 필요하기 때문이죠. 이 문제를 해결하기 위해 기업은 온도가 낮은 곳에 데이터 센터를 지어 자연 냉방의 도움을 받아 냉각장치에 소비되는 전력량을 낮추는 노력을 하고 있어요. 하지만 개인의 노력 없이 기업의 노력만으론 이 문제를 해결할 순 없어요. 그러니 우리도 노력을 해야겠죠? 영상을 저화질로 보는 것, 메일함을 정리하는 것, 핸드폰 사용 시간을 줄이는 것 모두 도움이 된다고 하니 한 번 실천하는 건 어떨까요?",
-  },
 ];
+
+// 선택지 변경
 function changeSection(object) {
   const { detail, quest, firstOpt, secondOpt, thirdOpt } = object;
   explanation.innerHTML = detail;
@@ -236,39 +240,36 @@ function changeSection(object) {
   optionBtn[2].innerHTML = thirdOpt;
 }
 
+//결과 상단부 출력
 function nicknameSection(object) {
-  const { detail, note } = object;
+  const { id, detail, note } = object;
+  backImg[12].style.backgroundImage = `url(./img/result${id}.png)`;
   explanation.innerHTML = detail;
   notice.innerHTML = "<br>" + note;
 }
 
-function showResult(answerArray, quest, result) {
+//팁 출력
+function showTip(answerArray, quest, result) {
   let answerShow = [];
 
-  for (let i = 0; i < answerArray.length; i++) {
-    if (i !== 6 && i !== 10 && i !== 11 && i !== 12) {
-      if (
-        answerArray.includes(quest[i].firstOpt) ||
-        answerArray.includes(quest[i].secondOpt)
-      ) {
-        answerShow.push(result[i].exp);
-      }
-    } else {
-      if (answerArray.includes(quest[6 || 10 || 11 || 12].firstOpt)) {
-        if (answerShow.includes(result[6].exp)) {
-          continue;
-        }
-        answerShow.push(result[6].exp);
-      }
+  for (let i = 0; i < 10; i++) {
+    if (
+      answerArray.includes(quest[i].firstOpt) ||
+      answerArray.includes(quest[i].secondOpt)
+    ) {
+      answerShow.push(result[i].exp);
     }
   }
 
-  if (answerShow.length === 0) {
-    answerShow.push(result[Math.floor(Math.random() * result)]);
+  if (answerShow.length < 2) {
+    while (answerShow.length < 4) {
+      answerShow.push(result[Math.floor(Math.random() * result.length)].exp);
+    }
   }
   return answerShow.join("<br><br>");
 }
 
+// 화면 출력 변화
 function updateScreen() {
   if (click === 0) {
     main.style.justifyContent = "flex-end";
@@ -308,7 +309,6 @@ function updateScreen() {
   } else if (click === 10) {
     changeSection(questArray[12]);
     tumbPage.classList.remove("hide");
-    tip.classList.add("hide");
     main.style.height = "100%";
     optionBtn[1].classList.add("hide");
     optionBtn[2].classList.add("hide");
@@ -320,39 +320,56 @@ function updateScreen() {
     }
     button.classList.remove("hide");
     tumbPage.classList.add("hide");
-    tip.classList.remove("hide");
-    furtherEx.classList.remove("hide");
+    const tip = document.createElement("section");
+    const furtherEx = document.createElement("h5");
+    main.appendChild(tip);
+    tip.appendChild(furtherEx);
+    tip.style.height = "40%";
+    tip.classList.add("tip");
     tip.classList.add("hidden");
     furtherEx.classList.add("hidden");
-    furtherEx.innerHTML = showResult(answer, questArray, resultArray);
-    if (count > 36) {
+    furtherEx.innerHTML = showTip(answer, questArray, resultArray);
+    if (score > 36) {
       nicknameSection(nicknameArray[0]);
-    } else if (count > 27) {
+    } else if (score > 27) {
       nicknameSection(nicknameArray[1]);
-    } else if (count > 21) {
+    } else if (score > 21) {
       nicknameSection(nicknameArray[2]);
-    } else if (count > 16) {
+    } else if (score > 16) {
       nicknameSection(nicknameArray[3]);
-    } else if (count > 12) {
+    } else if (score > 12) {
       nicknameSection(nicknameArray[4]);
     } else {
       nicknameSection(nicknameArray[5]);
     }
+    shareBtn.classList.remove("hide");
   }
 }
+
+// 화면 사이즈
+function windowWidth() {
+  backImg.forEach((img) => {
+    img.style.width = size + "px";
+  });
+}
+
+window.addEventListener("load", windowWidth);
 
 let answer = [];
 
 optionBtn.forEach((opt) => {
   opt.addEventListener("click", function (e) {
+    backCont.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    backCont.style.transform = "translateX(" + -size * counter + "px)";
     if (e.target === optionBtn[0]) {
-      count += 4;
+      score += 4;
       answer.push(e.target.innerHTML);
     } else if (e.target === optionBtn[1]) {
-      count += 2;
+      score += 2;
       answer.push(e.target.innerHTML);
     } else {
-      count += 0;
+      score += 0;
       answer.push(e.target.innerHTML);
     }
     if (click !== 3) {
@@ -361,11 +378,14 @@ optionBtn.forEach((opt) => {
       const { firstOpt, secondOpt, thirdOpt } = questArray[2];
       if (e.target.innerHTML === firstOpt) {
         optionBtn[1].classList.add("hide");
+        backImg[4].style.backgroundImage = "url('./img/back4-1.gif')";
         changeSection(questArray[3]);
       } else if (e.target.innerHTML === secondOpt) {
+        backImg[4].style.backgroundImage = "url('./img/back4-2.gif')";
         changeSection(questArray[4]);
       } else if (e.target.innerHTML === thirdOpt) {
         optionBtn[1].classList.add("hide");
+        backImg[4].style.backgroundImage = "url('./img/back4-3.gif')";
         changeSection(questArray[5]);
       }
       click++;
@@ -374,6 +394,8 @@ optionBtn.forEach((opt) => {
 });
 
 button.addEventListener("click", function () {
-  furtherEx.classList.toggle("hidden");
+  const furtherEx = document.querySelector("h5");
+  const tip = document.querySelector("section.tip");
   tip.classList.toggle("hidden");
+  furtherEx.classList.toggle("hidden");
 });

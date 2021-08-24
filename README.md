@@ -5,10 +5,10 @@ HTML, CSS, Vanila JS를 이용해 개발한 심리테스트 페이지입니다. 
 
 
 ### 제작 과정
-- [네이버 블로그](https://blog.naver.com/sinabero254/222234129884)
+- [블로그](https://yeyeong99.tistory.com/3)
 # 
 ## 1. 공유 화면 
-[![image](https://user-images.githubusercontent.com/67695343/111034930-3fab1880-845b-11eb-83a0-f4e525cb2c79.png)](https://camerart7th.netlify.app/)
+![image](https://user-images.githubusercontent.com/67695343/130572166-213fb5eb-b66e-48d3-8277-0ffa0cba025c.png)
 
 ## 2. 실행 화면
 <img src="https://user-images.githubusercontent.com/67695343/111035257-e5ab5280-845c-11eb-8fa7-135f8ab357e6.png" width="25%"></img>
